@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dnyaneshwar Raswanti</title>
+     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -694,11 +695,12 @@
                     </div>
                     <div class="logo-text">
                         <h1>ज्ञानेश्वर रसवंती गृह कोल्डड्रिंक्स अ‍ॅण्ड स्नॅक्स</h1>
+                        <p>महाराष्ट्र शासन कृषी अनुदानित<p>
                         <p>Dnyaneshwar Raswanti Gruha Colddrinks & Snacks</p>
                     </div>
                 </div>
                 <div class="tagline">
-                    <p>"ताजे रस, ताजी आत्मा"<br>"Fresh Juice, Fresh Soul"</p>
+                    <p>"चव इतकी भारी, भावना सुंदर सारी!"<br>"Taste So Fine, Feel Divine!"</p>
                 </div>
             </div>
         </div>
@@ -1015,9 +1017,7 @@
                     <h3>Dnyaneshwar Raswanti Gruha</h3>
                     <p>Refreshment Redefined Since 2000. Serving the community of Shrirampur with quality beverages and snacks for over two decades.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
                         <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
@@ -1035,9 +1035,12 @@
 
             </div>
 
-            <div class="copyright">
-                <p>&copy; 2023 Dnyaneshwar Raswanti Gruha. All Rights Reserved. | महाराष्ट्र शासन कृषी अनुदानित</p>
-            </div>
+<div class="copyright">
+    <p>
+        &copy; <span id="year"></span> Dnyaneshwar Raswanti Gruha Colddrinks & Snack. 
+        All Rights Reserved. | महाराष्ट्र शासन कृषी अनुदानित
+    </p>
+</div>
         </div>
     </footer>
 
@@ -1081,6 +1084,7 @@
             }
             lastTouchEnd = now;
         }, false);
+        document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
 </html>
