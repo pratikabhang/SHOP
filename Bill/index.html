@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Generator - Pratech (CSC)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Include jsPDF and html2canvas libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <!-- Include EmailJS library -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Shop Header Section -->
+        <header class="shop-header">
+            <h1 class="shop-name">Pratech (CSC)</h1>
+            <div class="owner-info">
+                <p><i class="fas fa-map-marker-alt"></i> Shrirampur</p>
+                <p><i class="fas fa-phone"></i> 9874561230</p>
+                <p><i class="fas fa-envelope"></i> csc.pratikabhang@gmail.com</p>
+                <p><i class="fas fa-user"></i> Pratik A. Bhang</p>
+            </div>
+        </header>
+
+        <!-- Invoice Form Section -->
+        <main class="invoice-form">
+            <h2>Create Invoice</h2>
+            
+            <!-- Customer Details Section -->
+            <section class="customer-details">
+                <h3>Customer Information</h3>
+                <div class="form-group">
+                    <label for="customer-name">Customer Name</label>
+                    <input type="text" id="customer-name" placeholder="Enter customer name">
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customer-mobile">Mobile Number</label>
+                        <div class="input-with-prefix">
+                            <span class="prefix">+91</span>
+                            <input type="tel" id="customer-mobile" placeholder="Enter mobile number" maxlength="10">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="customer-email">Email ID</label>
+                        <input type="email" id="customer-email" placeholder="Enter email address">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Services Section -->
+            <section class="services-section">
+                <div class="section-header">
+                    <h3>Services</h3>
+                    <button type="button" id="add-service" class="btn btn-primary"><i class="fas fa-plus"></i> Add Service</button>
+                </div>
+                <div id="services-container">
+                    <!-- Service items will be added here dynamically -->
+                </div>
+            </section>
+
+            <!-- Custom Message Section -->
+            <section class="message-section">
+                <h3>Custom Message</h3>
+                <textarea id="custom-message" placeholder="Type your message here"></textarea>
+            </section>
+
+            <!-- Payment Details Section -->
+            <section class="payment-section">
+                <h3>Payment Details</h3>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Payment Mode</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment-mode" value="UPI" checked>
+                                <span class="radio-custom"></span>
+                                UPI
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment-mode" value="Cash">
+                                <span class="radio-custom"></span>
+                                Cash
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment-mode" value="Debit Card">
+                                <span class="radio-custom"></span>
+                                Debit/Credit Card
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Payment Status</label>
+                        <div class="radio-group">
+                            <label class="radio-label">
+                                <input type="radio" name="payment-status" value="pending" checked>
+                                <span class="radio-custom"></span>
+                                Pending
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment-status" value="half-paid">
+                                <span class="radio-custom"></span>
+                                Half Paid
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="payment-status" value="paid">
+                                <span class="radio-custom"></span>
+                                Paid
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group" id="remaining-amount-section" style="display: none;">
+                    <label for="remaining-amount">Remaining Amount (₹)</label>
+                    <input type="number" id="remaining-amount" placeholder="Enter remaining amount" min="0" step="0.01">
+                </div>
+            </section>
+
+            <!-- Summary Section -->
+            <section class="summary-section">
+                <div class="summary-row">
+                    <span>Service Charges:</span>
+                    <span id="service-charges">₹0.00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Retailer Charges (10%):</span>
+                    <span id="retailer-charges">₹0.00</span>
+                </div>
+                <div class="summary-row total">
+                    <span>Total Amount:</span>
+                    <span id="total-amount">₹0.00</span>
+                </div>
+                <div class="payment-status-display">
+                    <span id="paid-status" class="status-pending">Payment Pending</span>
+                </div>
+            </section>
+
+            <!-- Action Buttons Section -->
+            <section class="actions-section">
+                <button id="generate-pdf" class="btn btn-primary"><i class="fas fa-file-pdf"></i> Generate Invoice</button>
+                <button id="send-whatsapp" class="btn btn-success"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+                <button id="send-email" class="btn btn-info"><i class="fas fa-envelope"></i> Send via Email</button>
+                <button id="reset-form" class="btn btn-secondary"><i class="fas fa-redo"></i> Reset Form</button>
+            </section>
+        </main>
+    </div>
+
+    <!-- Invoice Preview Section (Hidden by default) -->
+    <div id="invoice-preview" class="invoice-preview">
+        <div class="preview-content">
+            <div class="preview-header">
+                <button id="close-preview" class="btn btn-danger"><i class="fas fa-times"></i> Close</button>
+                <h2>Invoice Preview</h2>
+            </div>
+            <div id="preview-content">
+                <!-- Preview content will be generated here -->
+            </div>
+            <div class="preview-actions">
+                <button id="download-pdf" class="btn btn-primary"><i class="fas fa-download"></i> Download PDF</button>
+                <button id="send-all" class="btn btn-warning"><i class="fas fa-paper-plane"></i> Send All</button>
+                <button id="share-whatsapp-image" class="btn btn-success"><i class="fab fa-whatsapp"></i> Share Image on WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner">
+            <i class="fas fa-spinner fa-spin"></i>
+            <p>Processing...</p>
+        </div>
+    </div>
+
+    <!-- Notifications -->
+    <div id="success-notification" class="notification success">
+        <i class="fas fa-check-circle"></i>
+        <span>Operation completed successfully!</span>
+        <button class="close-notification"><i class="fas fa-times"></i></button>
+    </div>
+    
+    <div id="error-notification" class="notification error">
+        <i class="fas fa-exclamation-circle"></i>
+        <span>An error occurred. Please try again.</span>
+        <button class="close-notification"><i class="fas fa-times"></i></button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
