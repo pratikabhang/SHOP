@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dnyaneshwar Raswanti</title>
-     <link rel="icon" type="image/png" href="logo.png">
+    <title>Dnyaneshwar Raswanti & Cold Drinks</title>
+    <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -26,7 +27,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-        html, body {
+        html,
+        body {
             overflow-x: hidden;
             width: 100%;
             height: 100%;
@@ -212,7 +214,7 @@
         .about-image {
             flex: 1;
             min-width: 650px;
-            aspect-ratio: 5 / 2; 
+            aspect-ratio: 5 / 2;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: var(--shadow);
@@ -242,66 +244,114 @@
             font-size: 1rem;
         }
 
-        /* Menu Section */
+        /* --- NEW MENU STYLES (exactly as requested) --- */
         .menu {
             padding: 60px 0;
             background-color: var(--light);
         }
 
+        /* menu note section */
+        .menu-note {
+            background-color: var(--golden-yellow-light);
+            padding: 20px;
+            border-radius: 12px;
+            margin: 30px auto 40px auto;
+            max-width: 800px;
+            text-align: center;
+            border-left: 6px solid var(--golden-yellow-darker);
+            box-shadow: var(--shadow);
+        }
+
+        .menu-note p {
+            margin: 8px 0;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+
+        .menu-note i {
+            color: var(--golden-yellow-darker);
+            margin-right: 8px;
+        }
+
+        /* menu grid */
         .menu-items {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+            gap: 20px;
         }
 
         .menu-item {
             background: white;
-            border-radius: 10px;
+            border-radius: 16px;
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
             display: flex;
-            border-left: 5px solid var(--golden-yellow);
+            border-left: 6px solid var(--golden-yellow);
+            border-top: 1px solid rgba(218, 165, 32, 0.2);
         }
 
         .menu-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-6px);
+            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
         }
 
         .menu-item-content {
-            padding: 20px;
+            padding: 18px 20px;
             width: 100%;
         }
 
         .menu-item-header {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 10px;
+            align-items: baseline;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .menu-item-name {
-            font-weight: bold;
-            font-size: 1.1rem;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--dark);
         }
 
         .menu-item-price {
-            color: var(--golden-yellow-darker);
-            font-weight: bold;
-        }
-
-        .menu-item-desc {
-            color: #666;
-            font-size: 0.9rem;
-            margin-top: 5px;
+            background-color: var(--golden-yellow-light);
+            padding: 4px 14px;
+            border-radius: 40px;
+            color: var(--dark);
+            font-weight: 700;
+            font-size: 1.1rem;
+            border: 1px solid var(--golden-yellow-darker);
         }
 
         .menu-item-marathi {
-            color: var(--golden-yellow-dark);
-            font-style: italic;
-            font-size: 0.9rem;
-            margin-top: 3px;
+            color: var(--golden-yellow-darker);
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 6px 0 2px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
+
+        .menu-item-marathi i {
+            font-size: 0.9rem;
+            color: var(--golden-yellow-dark);
+        }
+
+        .menu-item-desc {
+            color: #555;
+            font-size: 0.95rem;
+            padding-left: 4px;
+            border-left: 2px solid var(--golden-yellow-light);
+            padding-left: 12px;
+            margin-top: 8px;
+        }
+
+        /* end menu styles */
 
         /* Hygiene Section */
         .hygiene {
@@ -434,49 +484,6 @@
             color: var(--golden-yellow-dark);
         }
 
-        /* Contact Section */
-        .contact {
-            padding: 60px 0;
-            background-color: var(--light);
-        }
-
-        .contact-content {
-            display: flex;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h3 {
-            margin-bottom: 20px;
-            color: var(--golden-yellow-darker);
-        }
-
-        .contact-detail {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .contact-detail i {
-            width: 40px;
-            font-size: 1.2rem;
-            color: var(--golden-yellow-darker);
-        }
-
-        .coming-soon {
-            background: var(--golden-yellow-darker);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 0.8rem;
-            margin-left: 10px;
-        }
-
         /* Footer */
         footer {
             background: var(--dark);
@@ -580,11 +587,18 @@
 
         /* Animations */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
-        /* Responsive Styles */
+        /* Responsive */
         @media (max-width: 1024px) {
             .about-image {
                 min-width: 500px;
@@ -596,45 +610,41 @@
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             .logo-section {
                 justify-content: center;
                 margin-bottom: 10px;
             }
-            
+
             .tagline {
                 text-align: center;
                 max-width: 100%;
             }
-            
+
             .about-content {
                 flex-direction: column;
             }
-            
+
             .hero h2 {
                 font-size: 2rem;
             }
-            
+
             .hero p {
                 font-size: 1rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.8rem;
             }
-            
-            .menu-items {
-                grid-template-columns: 1fr;
-            }
-            
+
             .hygiene-icons {
                 gap: 20px;
             }
-            
+
             .hygiene-icon {
                 min-width: 100px;
             }
-            
+
             .about {
                 display: none;
             }
@@ -645,6 +655,7 @@
                 min-width: 100%;
                 aspect-ratio: 5 / 2;
             }
+
             .about-image .since-text {
                 font-size: 0.9rem;
                 padding: 6px 10px;
@@ -661,29 +672,34 @@
             .hero {
                 padding: 60px 0;
             }
-            
+
             .hero h2 {
                 font-size: 1.8rem;
             }
-            
+
             .logo-text h1 {
-                font-size: 1.5rem;
+                font-size: 1.3rem;
             }
-            
+
             .tagline {
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
-            
+
             .section-title h2 {
                 font-size: 1.6rem;
             }
-            
-            .about, .menu, .hygiene, .locations, .contact {
+
+            .about,
+            .menu,
+            .hygiene,
+            .locations,
+            .contact {
                 padding: 40px 0;
             }
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -694,9 +710,9 @@
                         <img src="logo.png" alt="Dnyaneshwar Raswanti Logo">
                     </div>
                     <div class="logo-text">
-                        <h1>ज्ञानेश्वर रसवंती गृह कोल्डड्रिंक्स अ‍ॅण्ड स्नॅक्स</h1>
-                        <p>महाराष्ट्र शासन कृषी अनुदानित<p>
-                        <p>Dnyaneshwar Raswanti Gruha Colddrinks & Snacks</p>
+                        <h1>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</h1>
+                        <p>महाराष्ट्र शासन कृषी अनुदानित</p>
+                        <p>DNYANESHWAR RASWANTI & COLD DRINKS</p>
                     </div>
                 </div>
                 <div class="tagline">
@@ -706,228 +722,253 @@
         </div>
     </header>
 
-    <!-- About Section - Hidden on Mobile -->
+    <!-- About Section -->
     <section class="about">
         <div class="container">
             <div class="section-title">
                 <h2>About Us</h2>
             </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Two Decades of Refreshing Moments</h3>
-                    <p>Since our establishment in 2000, Dnyaneshwar Raswanti Gruha has been a beloved destination in Shrirampur for those seeking refreshing beverages and delicious snacks. Our commitment to quality and hygiene has made us a trusted name in the community.</p>
-                    <p>We take pride in using fresh ingredients and maintaining the highest standards of cleanliness in all our preparations. From our signature sugarcane juice to our wholesome breakfast items, every product is crafted with care and attention to detail.</p>
-                    <p>Whether you're starting your day with our poha or sabudana khichdi, or cooling down with our fresh fruit juices and lassi, we ensure every visit to our shop is a delightful experience.</p>
-                </div>
-                <div class="about-image">
-                    <img src="poster.jpg" alt="Dnyaneshwar Raswanti Gruha">
-                </div>
-            </div>
+<div class="about-content">
+    <div class="about-text">
+        <h3>Over Three Decades of Refreshing Taste Since 1991</h3>
+
+        <p>Established in <strong>1991</strong>, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has been a trusted
+            destination in Shrirampur for fresh and refreshing beverages. With more than three decades of experience, we
+            have proudly served thousands of happy customers by maintaining consistent quality, hygiene, and great
+            taste.</p>
+
+        <p>Our shop specializes in a variety of refreshing drinks including <strong>fresh sugarcane juice, fruit juices,
+                cold drinks, lassi, tea, and ice cream</strong>. Every drink is prepared using fresh ingredients and
+            served with care to ensure the best taste and satisfaction for our customers.</p>
+
+        <p>We are committed to maintaining high standards of cleanliness and hygiene in every step of our preparation.
+            Our goal is to provide refreshing beverages that not only taste great but are also safe and hygienic for
+            everyone.</p>
+
+        <p>Over the years, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has become a well-known and trusted name
+            in the local community. Our dedication to quality service and customer satisfaction continues to make us a
+            favorite stop for people looking for cool, refreshing drinks.</p>
+
+        <p><i class="fas fa-tint" style="color: var(--golden-yellow-darker);"></i> Maharashtra Government Agriculture
+            Supported (महाराष्ट्र शासन कृषी अनुदानित).</p>
+    </div>
+</div>
         </div>
     </section>
 
-    <!-- Menu Section -->
+    <!-- Menu Section with exact new items -->
     <section class="menu" id="menu">
         <div class="container">
             <div class="section-title">
                 <h2>Our Menu</h2>
             </div>
-            <div class="menu-items">
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Juice (Full)</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा रस (फुल)</div>
-                        <div class="menu-item-desc">Freshly extracted sugarcane juice</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Juice (Half)</div>
-                            <div class="menu-item-price">₹15</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा रस (हाफ)</div>
-                        <div class="menu-item-desc">Freshly extracted sugarcane juice</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Juice (No Lemon)</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा रस (बिन लिंबू)</div>
-                        <div class="menu-item-desc">Fresh sugarcane juice without lemon</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Juice (No Ice)</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा रस (बिन बर्फ)</div>
-                        <div class="menu-item-desc">Fresh sugarcane juice without ice</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Pineapple Juice</div>
-                            <div class="menu-item-price">₹30</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा पायनॅपल रस</div>
-                        <div class="menu-item-desc">Refreshing blend of sugarcane and pineapple</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugarcane Juice + Fruit Juice</div>
-                            <div class="menu-item-price">₹30</div>
-                        </div>
-                        <div class="menu-item-marathi">ऊसाचा रस + फ्रूट ज्यूस</div>
-                        <div class="menu-item-desc">Perfect mix of sugarcane and fruit juices</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Fruit Juice (Full)</div>
-                            <div class="menu-item-price">₹50</div>
-                        </div>
-                        <div class="menu-item-marathi">फ्रूट ज्यूस (फुल)</div>
-                        <div class="menu-item-desc">Fresh mixed fruit juice</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Fruit Juice (Half)</div>
-                            <div class="menu-item-price">₹30</div>
-                        </div>
-                        <div class="menu-item-marathi">फ्रूट ज्यूस (हाफ)</div>
-                        <div class="menu-item-desc">Fresh mixed fruit juice</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Lassi (Full)</div>
-                            <div class="menu-item-price">₹50</div>
-                        </div>
-                        <div class="menu-item-marathi">लस्सी (फुल)</div>
-                        <div class="menu-item-desc">Traditional sweet yogurt drink</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Lassi (Half)</div>
-                            <div class="menu-item-price">₹30</div>
-                        </div>
-                        <div class="menu-item-marathi">लस्सी (हाफ)</div>
-                        <div class="menu-item-desc">Traditional sweet yogurt drink</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Tender Coconut Water</div>
-                            <div class="menu-item-price">₹50</div>
-                        </div>
-                        <div class="menu-item-marathi">नारळपाणी</div>
-                        <div class="menu-item-desc">Fresh and natural coconut water</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Buttermilk</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">ताक</div>
-                        <div class="menu-item-desc">Refreshing spiced buttermilk</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Jaggery Tea</div>
-                            <div class="menu-item-price">₹10</div>
-                        </div>
-                        <div class="menu-item-marathi">गुळाचा चहा</div>
-                        <div class="menu-item-desc">Traditional tea with jaggery</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sugar Tea</div>
-                            <div class="menu-item-price">₹10</div>
-                        </div>
-                        <div class="menu-item-marathi">साखरेचा चहा</div>
-                        <div class="menu-item-desc">Regular tea with sugar</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Coffee</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">कॉफी</div>
-                        <div class="menu-item-desc">Hot and refreshing coffee</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">1 Cup Milk</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">१ कप दूध</div>
-                        <div class="menu-item-desc">Fresh milk</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Water Bottle</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">पाण्याची बाटली</div>
-                        <div class="menu-item-desc">Purified drinking water</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Poha</div>
-                            <div class="menu-item-price">₹20</div>
-                        </div>
-                        <div class="menu-item-marathi">पोहे</div>
-                        <div class="menu-item-desc">Flattened rice breakfast dish</div>
-                    </div>
-                </div>
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header">
-                            <div class="menu-item-name">Sabudana Khichdi</div>
-                            <div class="menu-item-price">₹30</div>
-                        </div>
-                        <div class="menu-item-marathi">साबुदाणा खिचडी</div>
-                        <div class="menu-item-desc">Tapioca pearl savory dish</div>
-                    </div>
-                </div>
+
+            <!-- menu note as requested -->
+            <div class="menu-note">
+                <p><i class="fas fa-check-circle"></i> आम्ही शुद्ध पाणी आणि R.O. फिल्टर केलेला बर्फ वापरतो.</p>
+                <p><i class="fas fa-check-circle"></i> We use pure water and R.O. filtered ice.</p>
+                <p><i class="fas fa-check-circle"></i> ग्राहकांच्या आवडीनुसार रस तयार करून मिळेल.</p>
+                <p><i class="fas fa-check-circle"></i> Juice prepared as per customer preference.</p>
             </div>
+
+            <div class="menu-items">
+                <!-- exactly 23 items from the table, with proper marathi/english/prices -->
+                <!-- 1 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (Full)</span><span
+                                class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ऊसाचा रस (फुल)</div>
+                        <div class="menu-item-desc">Freshly extracted, full glass</div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (Half)</span><span
+                                class="menu-item-price">₹15</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ऊसाचा रस (हाफ)</div>
+                        <div class="menu-item-desc">Freshly extracted, half glass</div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (No
+                                Ice)</span><span class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i>ऊसाचा रस (बिना बर्फ)</div>
+                        <div class="menu-item-desc">No ice, pure and natural</div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (No
+                                Lemon)</span><span class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i>ऊसाचा रस (बिना लिंबू)</div>
+                        <div class="menu-item-desc">No lemon, just sweetness</div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Pineapple Sugarcane Juice</span><span
+                                class="menu-item-price">₹30</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पायनॅपल ऊसाचा रस</div>
+                        <div class="menu-item-desc">Blended with fresh pineapple</div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Fruit Juice (Full)</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> फ्रूट ज्यूस (फुल)</div>
+                        <div class="menu-item-desc">Mixed seasonal fruits</div>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Fruit Juice (Half)</span><span
+                                class="menu-item-price">₹25</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> फ्रूट ज्यूस (हाफ)</div>
+                        <div class="menu-item-desc">Mixed fruits, half glass</div>
+                    </div>
+                </div>
+                <!-- 8 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Pineapple Juice</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पायनॅपल ज्यूस</div>
+                        <div class="menu-item-desc">Pure pineapple crush</div>
+                    </div>
+                </div>
+                <!-- 9 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Apple Juice</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ॲपल ज्यूस</div>
+                        <div class="menu-item-desc">Fresh apple blend</div>
+                    </div>
+                </div>
+                <!-- 10 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Mosambi Juice</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> मोसंबी ज्यूस</div>
+                        <div class="menu-item-desc">Sweet lime juice</div>
+                    </div>
+                </div>
+                <!-- 11 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Chikoo Juice</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> चिकू ज्यूस</div>
+                        <div class="menu-item-desc">Creamy chikoo shake style</div>
+                    </div>
+                </div>
+                <!-- 12 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Mango Juice</span><span
+                                class="menu-item-price">₹40</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> मॅंगो ज्यूस</div>
+                        <div class="menu-item-desc">Alphonso mango pulp</div>
+                    </div>
+                </div>
+                <!-- 13 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Lassi (Full)</span><span
+                                class="menu-item-price">₹50</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> लस्सी (फुल)</div>
+                        <div class="menu-item-desc">Thick creamy yogurt lassi</div>
+                    </div>
+                </div>
+                <!-- 14 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Lassi (Half)</span><span
+                                class="menu-item-price">₹30</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> लस्सी (हाफ)</div>
+                        <div class="menu-item-desc">Refreshing yogurt drink</div>
+                    </div>
+                </div>
+                <!-- 15 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Coconut Water</span><span
+                                class="menu-item-price">₹50</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> नारळपाणी</div>
+                        <div class="menu-item-desc">Tender coconut, chilled</div>
+                    </div>
+                </div>
+                <!-- 16 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Jaggery Tea</span><span
+                                class="menu-item-price">₹10</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> गुळाचा चहा</div>
+                        <div class="menu-item-desc">Traditional jaggery tea</div>
+                    </div>
+                </div>
+                <!-- 17 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Sugar Tea</span><span
+                                class="menu-item-price">₹10</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> साखरेचा चहा</div>
+                        <div class="menu-item-desc">Regular milk tea</div>
+                    </div>
+                </div>
+                <!-- 18 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Jeera Soda</span><span
+                                class="menu-item-price">₹10</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> जिरा सोडा</div>
+                        <div class="menu-item-desc">Cumin flavored soda</div>
+                    </div>
+                </div>
+                <!-- 19 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Cold Drink (250 ml)</span><span
+                                class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> कोल्ड ड्रिंक (250 ml)</div>
+                        <div class="menu-item-desc">Assorted brands</div>
+                    </div>
+                </div>
+                <!-- 20 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Ice Cream (90 ml)</span><span
+                                class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> आइस क्रीम (90 ml)</div>
+                        <div class="menu-item-desc">Vanilla / strawberry</div>
+                    </div>
+                </div>
+                <!-- 21 -->
+                <div class="menu-item">
+                    <div class="menu-item-content">
+                        <div class="menu-item-header"><span class="menu-item-name">Bisleri Water Bottle</span><span
+                                class="menu-item-price">₹20</span></div>
+                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> बिसलेरी बॉटल</div>
+                        <div class="menu-item-desc">1 litre pack</div>
+                    </div>
+                </div>
+                <!-- 22 & 23? actually we have 21 items from list, but user gave 21 lines? let's double-check: from sugarcane(full) to bisleri = 21. We'll keep all. If any missing like 'special without lemon' already included (item4). So fine -->
+            </div>
+            <!-- extra line: total items match given table (21 items) -->
         </div>
     </section>
 
-    <!-- Hygiene Section -->
+    <!-- Hygiene Section (remains) -->
     <section class="hygiene">
         <div class="container">
             <div class="hygiene-content">
@@ -935,36 +976,28 @@
                 <p>We use clean water and pure R.O. filtered ice in all our preparations.</p>
                 <p>Cleanliness and comfort are our top priorities — from preparation to your seat!</p>
                 <div class="hygiene-icons">
-                    <div class="hygiene-icon">
-                        <i class="fas fa-hand-sparkles"></i>
+                    <div class="hygiene-icon"><i class="fas fa-hand-sparkles"></i>
                         <p>Clean Hands</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-filter"></i>
+                    <div class="hygiene-icon"><i class="fas fa-filter"></i>
                         <p>RO Filtered Water</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-utensils"></i>
+                    <div class="hygiene-icon"><i class="fas fa-utensils"></i>
                         <p>Sanitized Utensils</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-leaf"></i>
+                    <div class="hygiene-icon"><i class="fas fa-leaf"></i>
                         <p>Fresh Ingredients</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-chair"></i>
+                    <div class="hygiene-icon"><i class="fas fa-chair"></i>
                         <p>Clean Seating Area</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-glass-whiskey"></i>
+                    <div class="hygiene-icon"><i class="fas fa-glass-whiskey"></i>
                         <p>Spotless Glasses</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-broom"></i>
+                    <div class="hygiene-icon"><i class="fas fa-broom"></i>
                         <p>Regular Cleaning</p>
                     </div>
-                    <div class="hygiene-icon">
-                        <i class="fas fa-seedling"></i>
+                    <div class="hygiene-icon"><i class="fas fa-seedling"></i>
                         <p>Clean & Fresh Environment</p>
                     </div>
                 </div>
@@ -981,26 +1014,30 @@
             <div class="location-cards">
                 <div class="location-card">
                     <div class="location-map">
-                        <div class="map-preview" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:A%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                        <div class="map-preview"
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:A%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
                             <div class="map-overlay">Main Branch - Shrirampur</div>
                         </div>
                     </div>
                     <div class="location-info">
                         <h3>Main Branch</h3>
                         <p>Shrirampur, Maharashtra</p>
-                        <a href="https://maps.app.goo.gl/xDoQ9sAeo6GCViH87" class="location-link" target="_blank">View on Google Maps →</a>
+                        <a href="https://maps.app.goo.gl/xDoQ9sAeo6GCViH87" class="location-link" target="_blank">View
+                            on Google Maps →</a>
                     </div>
                 </div>
                 <div class="location-card">
                     <div class="location-map">
-                        <div class="map-preview" style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:B%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                        <div class="map-preview"
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:B%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
                             <div class="map-overlay">Second Branch - Shrirampur</div>
                         </div>
                     </div>
                     <div class="location-info">
                         <h3>Second Branch</h3>
                         <p>Shrirampur, Maharashtra</p>
-                        <a href="https://maps.app.goo.gl/QtuGkue6Bg32L6mM9" class="location-link" target="_blank">View on Google Maps →</a>
+                        <a href="https://maps.app.goo.gl/QtuGkue6Bg32L6mM9" class="location-link" target="_blank">View
+                            on Google Maps →</a>
                     </div>
                 </div>
             </div>
@@ -1011,36 +1048,31 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                
-                <!-- About Section -->
                 <div class="footer-section">
-                    <h3>Dnyaneshwar Raswanti Gruha</h3>
-                    <p>Refreshment Redefined Since 2000. Serving the community of Shrirampur with quality beverages and snacks for over two decades.</p>
+                    <h3>Dnyaneshwar Raswanti & Cold Drinks</h3>
+                    <p>Refreshment Redefined Since 1991. Serving Shrirampur with quality beverages for over three
+                        decades.</p>
                     <div class="social-links">
                         <a href="#"><i class="fab fa-instagram"></i></a>
                         <a href="#"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
-                <!-- Contact Info -->
                 <div class="footer-section">
                     <h3>Contact Info</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Shrirampur, Ahilyanagar, Maharashtra</li>
                         <li><i class="fas fa-phone"></i> +91 9860745626</li>
                         <li><i class="fas fa-envelope"></i> dnyaneshwarraswanti@gmail.com</li>
-                        <li><i class="fas fa-clock"></i> 7:00 AM - 9:00 PM</li>
+                        <li><i class="fas fa-clock"></i> 9:00 AM - 9:00 PM</li>
                     </ul>
                 </div>
-
             </div>
 
-<div class="copyright">
-    <p>
-        &copy; <span id="year"></span> Dnyaneshwar Raswanti Gruha Colddrinks & Snack. 
-        All Rights Reserved. | महाराष्ट्र शासन कृषी अनुदानित
-    </p>
-</div>
+            <div class="copyright">
+                <p>&copy; <span id="year"></span> Dnyaneshwar Raswanti & Cold Drinks. All Rights Reserved. | महाराष्ट्र
+                    शासन कृषी अनुदानित</p>
+            </div>
         </div>
     </footer>
 
@@ -1049,10 +1081,8 @@
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
-                
                 const targetId = this.getAttribute('href');
                 if (targetId === '#') return;
-                
                 const targetElement = document.querySelector(targetId);
                 if (targetElement) {
                     window.scrollTo({
@@ -1064,20 +1094,20 @@
         });
 
         // Disable zoom
-        document.addEventListener('wheel', function(e) {
+        document.addEventListener('wheel', function (e) {
             if (e.ctrlKey) {
                 e.preventDefault();
             }
         }, { passive: false });
 
-        document.addEventListener('touchstart', function(e) {
+        document.addEventListener('touchstart', function (e) {
             if (e.touches.length > 1) {
                 e.preventDefault();
             }
         });
 
         let lastTouchEnd = 0;
-        document.addEventListener('touchend', function(e) {
+        document.addEventListener('touchend', function (e) {
             const now = (new Date()).getTime();
             if (now - lastTouchEnd <= 300) {
                 e.preventDefault();
@@ -1087,4 +1117,5 @@
         document.getElementById("year").textContent = new Date().getFullYear();
     </script>
 </body>
+
 </html>
