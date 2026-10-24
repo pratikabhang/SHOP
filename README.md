@@ -1,16 +1,6 @@
 # 🥤 Dnyaneshwar Raswanti & Cold Drinks
 
 <p align="center">
-  <strong>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</strong><br/>
-  <em>चव इतकी भारी, भावना सुंदर सारी!</em><br/>
-  <strong>Taste So Fine, Feel Divine!</strong>
-</p>
-
-<p align="center">
-  A digital storefront for a local beverage business in Shrirampur, Maharashtra.
-</p>
-
-<p align="center">
   <a href="https://dnyaneshwarraswanti.netlify.app/">
     <img src="https://img.shields.io/badge/Live%20Website-Visit%20Now-228B22?style=for-the-badge" alt="Live Website"/>
   </a>
@@ -18,8 +8,6 @@
     <img src="https://img.shields.io/badge/GitHub-Source%20Code-181717?style=for-the-badge&logo=github" alt="GitHub Repository"/>
   </a>
 </p>
-
----
 
 ## 📖 About the Project
 
