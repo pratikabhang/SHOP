@@ -4,58 +4,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Dnyaneshwar Raswanti & Cold Drinks</title>
+    <title>Dnyaneshwar Raswanti & Cold Drinks | ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</title>
     <link rel="icon" type="image/png" href="logo.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
     <style>
         :root {
-            --golden-yellow: #FFD700;
-            --golden-yellow-light: #FFE55C;
-            --golden-yellow-dark: #D4AF37;
-            --golden-yellow-darker: #B8860B;
-            --light: #FFFDF0;
-            --dark: #3E2C00;
-            --text: #4A3C00;
-            --shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            --transition: all 0.3s ease;
+            /* Fresh & Refreshing Palette */
+            --primary-blue: #0F4C81;
+            --primary-blue-light: #2E86C1;
+            --primary-blue-dark: #0A2A4A;
+            --accent-yellow: #F4D03F;
+            --accent-yellow-hover: #F1C40F;
+            --accent-green: #27AE60;
+            --accent-red: #E74C3C;
+            --fresh-white: #FBFCFC;
+            --light-bg: #F0F8FF;
+            --white: #FFFFFF;
+            --text-dark: #2C3E50;
+            --text-light: #5D6D7E;
+            --shadow-soft: 0 10px 30px rgba(15, 76, 129, 0.06);
+            --shadow-strong: 0 20px 50px rgba(15, 76, 129, 0.15);
+            --transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Poppins', sans-serif;
         }
 
-        html,
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
+            background-color: var(--fresh-white);
+            color: var(--text-dark);
+            line-height: 1.7;
             overflow-x: hidden;
+            position: relative;
+        }
+
+        /* ---------- FLOATING BACKGROUND ANIMATION ---------- */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            touch-action: pan-y;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            background: linear-gradient(135deg, var(--fresh-white) 0%, var(--light-bg) 100%);
         }
 
-        body {
-            background-color: var(--light);
-            color: var(--text);
-            line-height: 1.6;
+        .bg-animation span {
+            position: absolute;
+            display: block;
+            background: rgba(46, 134, 193, 0.08);
+            border-radius: 50%;
+            animation: floatUp 20s linear infinite;
+            bottom: -150px;
+        }
+
+        .bg-animation span:nth-child(1) {
+            left: 10%;
+            width: 80px;
+            height: 80px;
+            animation-duration: 18s;
+        }
+
+        .bg-animation span:nth-child(2) {
+            left: 20%;
+            width: 30px;
+            height: 30px;
+            animation-duration: 14s;
+            animation-delay: 2s;
+        }
+
+        .bg-animation span:nth-child(3) {
+            left: 35%;
+            width: 60px;
+            height: 60px;
+            animation-duration: 22s;
+            animation-delay: 4s;
+        }
+
+        .bg-animation span:nth-child(4) {
+            left: 50%;
+            width: 40px;
+            height: 40px;
+            animation-duration: 16s;
+            animation-delay: 0s;
+        }
+
+        .bg-animation span:nth-child(5) {
+            left: 65%;
+            width: 90px;
+            height: 90px;
+            animation-duration: 25s;
+            animation-delay: 5s;
+        }
+
+        .bg-animation span:nth-child(6) {
+            left: 75%;
+            width: 25px;
+            height: 25px;
+            animation-duration: 12s;
+            animation-delay: 1s;
+        }
+
+        .bg-animation span:nth-child(7) {
+            left: 85%;
+            width: 50px;
+            height: 50px;
+            animation-duration: 19s;
+            animation-delay: 3s;
+        }
+
+        .bg-animation span:nth-child(8) {
+            left: 95%;
+            width: 70px;
+            height: 70px;
+            animation-duration: 21s;
+            animation-delay: 6s;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+                border-radius: 50%;
+            }
+
+            100% {
+                transform: translateY(-1200px) rotate(720deg);
+                opacity: 0;
+                border-radius: 15%;
+            }
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1150px;
             margin: 0 auto;
-            padding: 0 15px;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1;
         }
 
-        /* Header Styles */
+        /* ---------- HEADER ---------- */
         header {
-            background: var(--golden-yellow);
-            color: var(--dark);
-            padding: 1rem 0;
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            color: var(--text-dark);
+            padding: 0.8rem 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: var(--shadow);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            border-bottom: 3px solid var(--accent-yellow);
+            transition: var(--transition);
         }
 
         .header-content {
@@ -63,27 +176,35 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
+            gap: 15px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
             gap: 15px;
-            flex: 1;
+            flex: 1 1 300px;
         }
 
         .logo-circle {
-            width: 80px;
-            height: 80px;
+            width: 75px;
+            height: 75px;
             border-radius: 50%;
-            background: white;
+            background: var(--white);
             display: flex;
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            border: 3px solid var(--golden-yellow-dark);
+            box-shadow: 0 6px 15px rgba(15, 76, 129, 0.15);
+            border: 3px solid var(--primary-blue-light);
             flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .logo-circle:hover {
+            transform: rotate(10deg) scale(1.1);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 0 25px rgba(244, 208, 63, 0.5);
         }
 
         .logo-circle img {
@@ -93,345 +214,586 @@
             border-radius: 50%;
         }
 
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
         .logo-text h1 {
-            font-size: 1.8rem;
-            margin-bottom: 5px;
-            color: var(--dark);
+            font-size: 1.4rem;
+            margin-bottom: 2px;
+            color: var(--primary-blue-dark);
+            font-weight: 800;
+            letter-spacing: -0.5px;
         }
 
         .logo-text p {
-            font-size: 0.9rem;
-            opacity: 0.9;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary-blue);
+            letter-spacing: 1px;
         }
 
         .tagline {
-            font-style: italic;
             text-align: right;
-            font-size: 1rem;
-            opacity: 0.95;
-            max-width: 300px;
-            flex-shrink: 0;
-            color: var(--dark);
+            font-size: 0.95rem;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--primary-blue);
+            max-width: 320px;
+            transition: var(--transition);
         }
 
-        /* Hero Section */
+        .tagline:hover {
+            transform: scale(1.05);
+            color: var(--accent-yellow-hover);
+        }
+
+        /* ---------- HERO ---------- */
         .hero {
-            background: linear-gradient(135deg, var(--golden-yellow) 0%, var(--golden-yellow-dark) 100%);
-            color: var(--dark);
-            padding: 80px 0;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            color: var(--white);
+            padding: 130px 0 110px;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+            margin-bottom: -50px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none"/></svg>');
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
         }
 
         .hero h2 {
-            font-size: 2.5rem;
+            font-size: 3.2rem;
             margin-bottom: 20px;
-            animation: fadeIn 1.5s ease;
+            font-weight: 900;
+            color: var(--accent-yellow);
+            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
+            animation: slideDown 1s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .hero p {
-            font-size: 1.1rem;
-            max-width: 800px;
-            margin: 0 auto 30px;
-            animation: fadeIn 2s ease;
+            font-size: 1.2rem;
+            max-width: 750px;
+            margin: 0 auto 40px;
+            font-weight: 400;
+            line-height: 1.8;
+            animation: slideUp 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .btn {
             display: inline-block;
-            background: var(--golden-yellow-darker);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
+            background: var(--accent-yellow);
+            color: var(--primary-blue-dark);
+            padding: 16px 50px;
+            border-radius: 50px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 800;
+            font-size: 1.1rem;
             transition: var(--transition);
-            animation: fadeIn 2.5s ease;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 2px solid transparent;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: zoomIn 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
         }
 
         .btn:hover {
-            background: white;
-            color: var(--golden-yellow-darker);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            background: var(--white);
+            color: var(--primary-blue);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--accent-yellow);
         }
 
-        /* About Section */
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        /* ---------- ABOUT SECTION ---------- */
         .about {
-            padding: 60px 0;
-            background-color: white;
+            padding: 120px 0 100px;
+            background: var(--white);
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 40px;
-            position: relative;
+            margin-bottom: 70px;
         }
 
         .section-title h2 {
-            font-size: 2.2rem;
-            color: var(--golden-yellow-darker);
+            font-size: 2.6rem;
+            color: var(--primary-blue-dark);
             display: inline-block;
+            position: relative;
+            font-weight: 800;
+            padding-bottom: 15px;
         }
 
         .section-title h2::after {
             content: '';
             position: absolute;
-            width: 100px;
-            height: 3px;
-            background: var(--golden-yellow-dark);
-            bottom: -10px;
+            width: 80px;
+            height: 5px;
+            background: var(--accent-yellow);
+            bottom: 0;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 5px;
+            transition: width 0.4s ease;
+        }
+
+        .section-title:hover h2::after {
+            width: 150px;
         }
 
         .about-content {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 60px;
             flex-wrap: wrap;
         }
 
         .about-text {
-            flex: 1;
-            min-width: 300px;
+            flex: 1 1 450px;
         }
 
         .about-text h3 {
-            font-size: 1.6rem;
-            margin-bottom: 20px;
-            color: var(--golden-yellow-darker);
+            font-size: 2rem;
+            margin-bottom: 25px;
+            color: var(--primary-blue);
+            font-weight: 800;
+            line-height: 1.3;
         }
 
         .about-text p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+            color: var(--text-dark);
+            text-align: justify;
         }
 
-        .about-image {
-            flex: 1;
-            min-width: 650px;
-            aspect-ratio: 5 / 2;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
+        .about-text strong {
+            color: var(--primary-blue);
+        }
+
+        .about-image-container {
+            flex: 1 1 400px;
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: linear-gradient(135deg, var(--golden-yellow-light) 0%, var(--golden-yellow) 100%);
+            padding: 20px;
         }
 
-        .about-image img {
+        .about-logo-frame {
+            width: 100%;
+            max-width: 400px;
+            aspect-ratio: 1 / 1;
+            background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
+            border-radius: 50%;
+            padding: 20px;
+            box-shadow: 0 20px 50px rgba(15, 76, 129, 0.25);
+            position: relative;
+            animation: pulseGlow 4s infinite alternate;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-logo-frame::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 50%;
+            border: 2px dashed var(--accent-yellow);
+            animation: rotateDashed 20s linear infinite;
+        }
+
+        .about-logo-inner {
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid var(--white);
+            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-logo-inner img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            transition: transform 0.5s ease;
         }
 
-        .about-image .since-text {
+        .about-logo-frame:hover .about-logo-inner img {
+            transform: scale(1.1);
+        }
+
+        .since-text {
             position: absolute;
             bottom: 10px;
             right: 10px;
-            background: rgba(255, 255, 255, 0.8);
-            color: var(--dark);
-            padding: 8px 14px;
-            border-radius: 6px;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        /* --- NEW MENU STYLES (exactly as requested) --- */
-        .menu {
-            padding: 60px 0;
-            background-color: var(--light);
-        }
-
-        /* menu note section */
-        .menu-note {
-            background-color: var(--golden-yellow-light);
-            padding: 20px;
-            border-radius: 12px;
-            margin: 30px auto 40px auto;
-            max-width: 800px;
-            text-align: center;
-            border-left: 6px solid var(--golden-yellow-darker);
-            box-shadow: var(--shadow);
-        }
-
-        .menu-note p {
-            margin: 8px 0;
-            font-weight: 500;
-            color: var(--dark);
+            background: var(--accent-yellow);
+            color: var(--primary-blue-dark);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 800;
             font-size: 1.1rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border: 3px solid var(--white);
+            animation: bounceIn 2s ease;
+            z-index: 2;
         }
 
-        .menu-note i {
-            color: var(--golden-yellow-darker);
-            margin-right: 8px;
+        @keyframes pulseGlow {
+            0% {
+                box-shadow: 0 20px 50px rgba(15, 76, 129, 0.25);
+            }
+
+            100% {
+                box-shadow: 0 20px 70px rgba(46, 134, 193, 0.5);
+            }
         }
 
-        /* menu grid */
-        .menu-items {
+        @keyframes rotateDashed {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0);
+            }
+
+            50% {
+                transform: scale(1.2);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* ---------- MODERN MENU CARDS ---------- */
+        .menu-section {
+            padding: 120px 0;
+            background: var(--light-bg);
+            position: relative;
+        }
+
+        .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
         }
 
-        .menu-item {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
+        .menu-card {
+            background: var(--white);
+            border-radius: 24px;
+            padding: 30px;
+            box-shadow: var(--shadow-soft);
             transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-top: 6px solid var(--primary-blue);
             display: flex;
-            border-left: 6px solid var(--golden-yellow);
-            border-top: 1px solid rgba(218, 165, 32, 0.2);
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .menu-item:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 16px 28px rgba(0, 0, 0, 0.12);
-        }
-
-        .menu-item-content {
-            padding: 18px 20px;
+        .menu-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(244, 208, 63, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: var(--transition);
         }
 
-        .menu-item-header {
+        .menu-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            box-shadow: var(--shadow-strong);
+            border-top-color: var(--accent-yellow);
+        }
+
+        .menu-card:hover::before {
+            opacity: 1;
+        }
+
+        .menu-card-header {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 8px;
-            flex-wrap: wrap;
-            gap: 8px;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 1;
+            gap: 10px;
         }
 
         .menu-item-name {
-            font-weight: 700;
             font-size: 1.2rem;
-            color: var(--dark);
+            font-weight: 800;
+            color: var(--primary-blue-dark);
+            line-height: 1.3;
+            flex: 1;
         }
 
         .menu-item-price {
-            background-color: var(--golden-yellow-light);
-            padding: 4px 14px;
-            border-radius: 40px;
-            color: var(--dark);
-            font-weight: 700;
+            background: var(--accent-yellow);
+            color: var(--primary-blue-dark);
+            padding: 6px 16px;
+            border-radius: 30px;
+            font-weight: 800;
             font-size: 1.1rem;
-            border: 1px solid var(--golden-yellow-darker);
+            box-shadow: 0 4px 15px rgba(244, 208, 63, 0.4);
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .menu-card:hover .menu-item-price {
+            transform: scale(1.1) rotate(5deg);
+            background: var(--primary-blue);
+            color: var(--white);
         }
 
         .menu-item-marathi {
-            color: var(--golden-yellow-darker);
-            font-weight: 600;
-            font-size: 1rem;
-            margin: 6px 0 2px 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+            color: var(--accent-green);
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
-            gap: 6px;
+            gap: 8px;
+            position: relative;
+            z-index: 1;
         }
 
         .menu-item-marathi i {
-            font-size: 0.9rem;
-            color: var(--golden-yellow-dark);
+            font-size: 1rem;
         }
 
         .menu-item-desc {
-            color: #555;
             font-size: 0.95rem;
-            padding-left: 4px;
-            border-left: 2px solid var(--golden-yellow-light);
+            color: var(--text-light);
+            font-weight: 500;
+            border-left: 3px solid var(--accent-yellow);
             padding-left: 12px;
-            margin-top: 8px;
+            position: relative;
+            z-index: 1;
+            margin-top: auto;
         }
 
-        /* end menu styles */
-
-        /* Hygiene Section */
-        .hygiene {
-            padding: 60px 0;
-            background: linear-gradient(135deg, var(--golden-yellow-dark) 0%, var(--golden-yellow-darker) 100%);
-            color: white;
+        .menu-note-box {
+            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+            color: var(--white);
+            padding: 35px;
+            border-radius: 24px;
             text-align: center;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-strong);
+            position: relative;
+            overflow: hidden;
         }
 
-        .hygiene-content {
-            max-width: 800px;
-            margin: 0 auto;
+        .menu-note-box::after {
+            content: '🍹';
+            position: absolute;
+            font-size: 10rem;
+            right: -30px;
+            bottom: -40px;
+            opacity: 0.1;
+            transform: rotate(-15deg);
+        }
+
+        .menu-note-box p {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin: 12px 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .menu-note-box i {
+            color: var(--accent-yellow);
+            font-size: 1.2rem;
+        }
+
+        /* ---------- HYGIENE (ENHANCED) ---------- */
+        .hygiene {
+            padding: 120px 0;
+            background: var(--primary-blue-dark);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+        }
+
+        .hygiene::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.03)" stroke-width="2" fill="none"/></svg>');
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         .hygiene h2 {
-            font-size: 2.2rem;
-            margin-bottom: 30px;
+            font-size: 2.6rem;
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: var(--accent-yellow);
+            position: relative;
+            z-index: 1;
         }
 
         .hygiene p {
-            font-size: 1.1rem;
-            margin-bottom: 20px;
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            position: relative;
+            z-index: 1;
+            color: #E0E0E0;
         }
 
         .hygiene-icons {
-            display: flex;
-            justify-content: center;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
             gap: 30px;
-            margin-top: 40px;
-            flex-wrap: wrap;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
         }
 
         .hygiene-icon {
-            text-align: center;
-            min-width: 120px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 40px 20px;
+            border-radius: 20px;
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        .hygiene-icon:hover {
+            background: rgba(255, 255, 255, 0.12);
+            transform: translateY(-10px);
+            border-color: var(--accent-yellow);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
         }
 
         .hygiene-icon i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: var(--golden-yellow-light);
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-yellow);
+            transition: var(--transition);
         }
 
-        /* Locations Section */
+        .hygiene-icon:hover i {
+            transform: scale(1.2) rotate(10deg);
+        }
+
+        .hygiene-icon p {
+            font-size: 1rem;
+            font-weight: 600;
+            margin: 0;
+            color: var(--white);
+        }
+
+        /* ---------- LOCATIONS ---------- */
         .locations {
-            padding: 60px 0;
-            background-color: white;
+            padding: 120px 0;
+            background: var(--white);
         }
 
-        .location-cards {
-            display: flex;
-            gap: 25px;
-            flex-wrap: wrap;
-            justify-content: center;
+        .location-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
         }
 
         .location-card {
-            flex: 1;
-            min-width: 300px;
-            background: white;
-            border-radius: 10px;
+            background: var(--light-bg);
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: var(--shadow);
+            box-shadow: var(--shadow-soft);
             transition: var(--transition);
-            border-top: 5px solid var(--golden-yellow);
+            display: flex;
+            flex-direction: column;
+            border-bottom: 6px solid var(--primary-blue);
         }
 
         .location-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-strong);
+            border-bottom-color: var(--accent-yellow);
         }
 
         .location-map {
             height: 200px;
-            background: var(--golden-yellow-light);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-weight: bold;
-            font-size: 1.2rem;
             position: relative;
             overflow: hidden;
         }
@@ -441,10 +803,11 @@
             height: 100%;
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            transition: transform 0.8s ease;
+        }
+
+        .location-card:hover .map-preview {
+            transform: scale(1.15);
         }
 
         .map-overlay {
@@ -453,72 +816,136 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 215, 0, 0.7);
+            background: rgba(15, 76, 129, 0.65);
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--dark);
-            font-weight: bold;
+            color: var(--accent-yellow);
+            font-weight: 800;
             font-size: 1.2rem;
+            text-align: center;
+            padding: 0 20px;
+            transition: var(--transition);
+        }
+
+        .location-card:hover .map-overlay {
+            background: rgba(15, 76, 129, 0.85);
         }
 
         .location-info {
-            padding: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
         }
 
         .location-info h3 {
-            margin-bottom: 15px;
-            color: var(--golden-yellow-darker);
+            margin-bottom: 10px;
+            color: var(--primary-blue);
+            font-size: 1.4rem;
+            font-weight: 800;
+        }
+
+        .location-info p {
+            color: var(--text-light);
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 20px;
         }
 
         .location-link {
             display: inline-block;
-            margin-top: 15px;
-            color: var(--golden-yellow-darker);
-            font-weight: bold;
+            margin-top: auto;
+            color: var(--primary-blue);
+            font-weight: 700;
             text-decoration: none;
             transition: var(--transition);
+            align-self: flex-start;
+            position: relative;
+            padding-bottom: 3px;
+        }
+
+        .location-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background: var(--accent-yellow);
+            transition: width 0.3s ease;
         }
 
         .location-link:hover {
-            color: var(--golden-yellow-dark);
+            color: var(--accent-yellow-hover);
         }
 
-        /* Footer */
+        .location-link:hover::after {
+            width: 100%;
+        }
+
+        .status-badge {
+            display: inline-block;
+            font-size: 0.75rem;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 800;
+            margin-top: 15px;
+            align-self: flex-start;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .status-badge.closed {
+            background: rgba(231, 76, 60, 0.1);
+            color: var(--accent-red);
+            border: 1px solid rgba(231, 76, 60, 0.3);
+        }
+
+        .status-badge.coming-soon {
+            background: rgba(39, 174, 96, 0.1);
+            color: var(--accent-green);
+            border: 1px solid rgba(39, 174, 96, 0.3);
+        }
+
+        /* ---------- FOOTER ---------- */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 40px 0 15px;
+            background: var(--primary-blue-dark);
+            color: var(--white);
+            padding: 70px 0 20px;
+            border-top: 8px solid var(--accent-yellow);
         }
 
         .footer-content {
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 30px;
-            margin-bottom: 30px;
-        }
-
-        .footer-section {
-            flex: 1;
-            min-width: 250px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
         }
 
         .footer-section h3 {
-            margin-bottom: 20px;
-            color: var(--golden-yellow);
+            margin-bottom: 25px;
+            color: var(--accent-yellow);
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            font-size: 1.4rem;
         }
 
         .footer-section h3::after {
             content: '';
             position: absolute;
-            width: 50px;
-            height: 2px;
-            background: var(--golden-yellow);
+            width: 40px;
+            height: 3px;
+            background: var(--accent-yellow);
             bottom: 0;
             left: 0;
+            border-radius: 3px;
+        }
+
+        .footer-section p {
+            color: #BDC3C7;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
         }
 
         .footer-links {
@@ -526,82 +953,114 @@
         }
 
         .footer-links li {
-            margin-bottom: 10px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #BDC3C7;
+            font-size: 0.95rem;
         }
 
-        .footer-links a {
-            color: #ddd;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: var(--golden-yellow);
-            padding-left: 5px;
+        .footer-links i {
+            color: var(--accent-yellow);
+            width: 20px;
+            text-align: center;
+            font-size: 1.1rem;
         }
 
         .social-links {
             display: flex;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 30px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: #444;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
-            color: white;
+            color: var(--white);
             transition: var(--transition);
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .social-links a:hover {
-            background: var(--golden-yellow);
-            transform: translateY(-5px);
-        }
-
-        .qr-code {
-            background: white;
-            padding: 10px;
-            border-radius: 10px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .qr-code img {
-            width: 150px;
-            height: 150px;
-            display: block;
+            background: var(--accent-yellow);
+            color: var(--primary-blue-dark);
+            transform: translateY(-5px) scale(1.1);
+            border-color: var(--accent-yellow);
         }
 
         .copyright {
             text-align: center;
-            padding-top: 20px;
-            border-top: 1px solid #555;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             font-size: 0.9rem;
-            color: #aaa;
+            color: #95A5A6;
         }
 
-        /* Animations */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* ---------- SCROLL ANIMATIONS ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(60px);
+            transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
         }
 
-        /* Responsive */
-        @media (max-width: 1024px) {
-            .about-image {
-                min-width: 500px;
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-left.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .reveal-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: all 0.9s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-right.active {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.6rem;
+            }
+
+            .about-content {
+                gap: 40px;
+            }
+
+            .about-logo-frame {
+                max-width: 350px;
             }
         }
 
@@ -613,7 +1072,6 @@
 
             .logo-section {
                 justify-content: center;
-                margin-bottom: 10px;
             }
 
             .tagline {
@@ -621,12 +1079,8 @@
                 max-width: 100%;
             }
 
-            .about-content {
-                flex-direction: column;
-            }
-
             .hero h2 {
-                font-size: 2rem;
+                font-size: 2.2rem;
             }
 
             .hero p {
@@ -634,43 +1088,52 @@
             }
 
             .section-title h2 {
-                font-size: 1.8rem;
+                font-size: 2.1rem;
+            }
+
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .menu-card {
+                padding: 25px;
+            }
+
+            .menu-item-name {
+                font-size: 1.1rem;
+            }
+
+            .menu-item-price {
+                font-size: 1rem;
+                padding: 4px 14px;
             }
 
             .hygiene-icons {
+                grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
                 gap: 20px;
             }
 
             .hygiene-icon {
-                min-width: 100px;
+                padding: 25px 15px;
             }
 
-            .about {
-                display: none;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .about-image {
-                min-width: 100%;
-                aspect-ratio: 5 / 2;
+            .hygiene-icon i {
+                font-size: 2.2rem;
             }
 
-            .about-image .since-text {
-                font-size: 0.9rem;
-                padding: 6px 10px;
+            .about-text h3 {
+                font-size: 1.6rem;
             }
-        }
 
-        @media (min-width: 769px) {
-            .about {
-                display: block;
+            .about-logo-frame {
+                max-width: 300px;
             }
         }
 
         @media (max-width: 480px) {
             .hero {
-                padding: 60px 0;
+                padding: 80px 0;
+                clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
             }
 
             .hero h2 {
@@ -678,7 +1141,11 @@
             }
 
             .logo-text h1 {
-                font-size: 1.3rem;
+                font-size: 1.2rem;
+            }
+
+            .logo-text p {
+                font-size: 0.75rem;
             }
 
             .tagline {
@@ -686,21 +1153,52 @@
             }
 
             .section-title h2 {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
-            .about,
-            .menu,
-            .hygiene,
-            .locations,
-            .contact {
-                padding: 40px 0;
+            .about-text h3 {
+                font-size: 1.4rem;
+            }
+
+            .menu-note-box p {
+                font-size: 0.95rem;
+            }
+
+            .menu-card-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .menu-item-price {
+                margin-left: 0;
+            }
+
+            .location-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-logo-frame {
+                max-width: 260px;
+            }
+
+            .since-text {
+                font-size: 0.9rem;
+                padding: 8px 20px;
+                bottom: 5px;
+                right: 5px;
             }
         }
     </style>
 </head>
 
 <body>
+    <!-- Animated Background -->
+    <div class="bg-animation">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container">
@@ -711,7 +1209,6 @@
                     </div>
                     <div class="logo-text">
                         <h1>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</h1>
-                        <p>महाराष्ट्र शासन कृषी अनुदानित</p>
                         <p>DNYANESHWAR RASWANTI & COLD DRINKS</p>
                     </div>
                 </div>
@@ -722,284 +1219,323 @@
         </div>
     </header>
 
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h2>महाराष्ट्र शासन कृषी अनुदानित</h2>
+            <p>Since 1981, serving the finest and freshest beverages in Shrirampur. Experience the taste of tradition
+                with a modern touch.</p>
+            <a href="#menu" class="btn">View Our Menu</a>
+        </div>
+    </section>
+
     <!-- About Section -->
-    <section class="about">
+    <section class="about" id="about">
         <div class="container">
-            <div class="section-title">
-                <h2>About Us</h2>
+            <div class="section-title reveal">
+                <h2>About Us | आमच्याबद्दल</h2>
             </div>
-<div class="about-content">
-    <div class="about-text">
-        <h3>Over Three Decades of Refreshing Taste Since 1991</h3>
+            <div class="about-content">
+                <div class="about-text reveal-left">
+                    <h3>Over Four Decades of Refreshing Taste Since 1981 | १९८१ पासून ताजेतवाने चव</h3>
+                    <p>Established in <strong>1981</strong>, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has
+                        been a trusted destination in Shrirampur for fresh and refreshing beverages. With more than four
+                        decades of experience, we have proudly served thousands of happy customers by maintaining
+                        consistent quality, hygiene, and great taste.</p>
+                    <p><strong>१९८१</strong> मध्ये स्थापित, <strong>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</strong> हे
+                        श्रीरामपूरमधील ताज्या आणि ताजेतवाने पेयांसाठी विश्वासार्ह ठिकाण आहे. चार दशकांहून अधिक अनुभवासह,
+                        आम्ही सातत्यपूर्ण गुणवत्ता, स्वच्छता आणि उत्तम चव राखून हजारो आनंदी ग्राहकांना सेवा दिली आहे.
+                    </p>
+                    <p>Our shop specializes in a variety of refreshing drinks including <strong>fresh sugarcane juice,
+                            fruit juices, cold drinks, lassi, tea, and ice cream</strong>. Every drink is prepared using
+                        fresh ingredients and served with care to ensure the best taste and satisfaction for our
+                        customers.</p>
+                    <p>आमचे दुकान <strong>ताजा ऊसाचा रस, फळांचे रस, कोल्ड ड्रिंक्स, लस्सी, चहा आणि आइस्क्रीम</strong>
+                        यासह विविध ताजेतवाने पेयांमध्ये विशेषज्ञ आहे. प्रत्येक पेय ताज्या घटकांसह तयार केले जाते आणि
+                        ग्राहकांना उत्तम चव आणि समाधान मिळावे यासाठी काळजीपूर्वक दिले जाते.</p>
+                </div>
 
-        <p>Established in <strong>1991</strong>, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has been a trusted
-            destination in Shrirampur for fresh and refreshing beverages. With more than three decades of experience, we
-            have proudly served thousands of happy customers by maintaining consistent quality, hygiene, and great
-            taste.</p>
-
-        <p>Our shop specializes in a variety of refreshing drinks including <strong>fresh sugarcane juice, fruit juices,
-                cold drinks, lassi, tea, and ice cream</strong>. Every drink is prepared using fresh ingredients and
-            served with care to ensure the best taste and satisfaction for our customers.</p>
-
-        <p>We are committed to maintaining high standards of cleanliness and hygiene in every step of our preparation.
-            Our goal is to provide refreshing beverages that not only taste great but are also safe and hygienic for
-            everyone.</p>
-
-        <p>Over the years, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has become a well-known and trusted name
-            in the local community. Our dedication to quality service and customer satisfaction continues to make us a
-            favorite stop for people looking for cool, refreshing drinks.</p>
-
-        <p><i class="fas fa-tint" style="color: var(--golden-yellow-darker);"></i> Maharashtra Government Agriculture
-            Supported (महाराष्ट्र शासन कृषी अनुदानित).</p>
-    </div>
-</div>
+                <div class="about-image-container reveal-right">
+                    <div class="about-logo-frame">
+                        <div class="about-logo-inner">
+                            <img src="logo.png" alt="Dnyaneshwar Raswanti Logo">
+                        </div>
+                        <div class="since-text">Since 1981 | १९८१ पासून</div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Menu Section with exact new items -->
-    <section class="menu" id="menu">
+    <!-- Modern Menu Section -->
+    <section class="menu-section" id="menu">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Menu</h2>
+            <div class="section-title reveal">
+                <h2>Our Menu | आमचे मेनू</h2>
             </div>
 
-            <!-- menu note as requested -->
-            <div class="menu-note">
-                <p><i class="fas fa-check-circle"></i> आम्ही शुद्ध पाणी आणि R.O. फिल्टर केलेला बर्फ वापरतो.</p>
-                <p><i class="fas fa-check-circle"></i> We use pure water and R.O. filtered ice.</p>
-                <p><i class="fas fa-check-circle"></i> ग्राहकांच्या आवडीनुसार रस तयार करून मिळेल.</p>
-                <p><i class="fas fa-check-circle"></i> Juice prepared as per customer preference.</p>
+            <div class="menu-note-box reveal">
+                <p><i class="fas fa-check-circle"></i> ग्राहकांच्या आवडीनुसार रस मिळेल. | Juice prepared as per customer
+                    preference</p>
+                <p><i class="fas fa-tint"></i> आम्ही आर. ओ. फिल्टर बर्फ वापरतो. | We use R.O. Filtered Ice.</p>
             </div>
 
-            <div class="menu-items">
-                <!-- exactly 23 items from the table, with proper marathi/english/prices -->
-                <!-- 1 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (Full)</span><span
-                                class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ऊसाचा रस (फुल)</div>
-                        <div class="menu-item-desc">Freshly extracted, full glass</div>
+            <div class="menu-grid">
+                <!-- 1. Sugarcane Juice (Full) -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Sugarcane Juice (Full)<br>ऊसाचा रस (फुल)</span>
+                        <span class="menu-item-price">₹20</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताजे आणि शुद्ध</div>
+                    <div class="menu-item-desc">Freshly extracted, full glass</div>
                 </div>
-                <!-- 2 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (Half)</span><span
-                                class="menu-item-price">₹15</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ऊसाचा रस (हाफ)</div>
-                        <div class="menu-item-desc">Freshly extracted, half glass</div>
+
+                <!-- 2. Sugarcane Juice (Half) -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Sugarcane Juice (Half)<br>ऊसाचा रस (हाफ)</span>
+                        <span class="menu-item-price">₹15</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताजे आणि शुद्ध</div>
+                    <div class="menu-item-desc">Freshly extracted, half glass</div>
                 </div>
-                <!-- 3 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (No
-                                Ice)</span><span class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i>ऊसाचा रस (बिना बर्फ)</div>
-                        <div class="menu-item-desc">No ice, pure and natural</div>
+
+                <!-- 3. Sugarcane Without Ice -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Sugarcane Without Ice<br>ऊसाचा रस (बिना बर्फ)</span>
+                        <span class="menu-item-price">₹25</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-snowflake"></i> बिना बर्फ</div>
+                    <div class="menu-item-desc">No ice, pure and natural sugarcane juice</div>
                 </div>
-                <!-- 4 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Sugarcane Juice (No
-                                Lemon)</span><span class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i>ऊसाचा रस (बिना लिंबू)</div>
-                        <div class="menu-item-desc">No lemon, just sweetness</div>
+
+                <!-- 4. Sugarcane Without Lemon -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Sugarcane Without Lemon<br>ऊसाचा रस (बिना लिंबू)</span>
+                        <span class="menu-item-price">₹25</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-lemon"></i> बिना लिंबू</div>
+                    <div class="menu-item-desc">No lemon, just the pure sweetness of sugarcane</div>
                 </div>
-                <!-- 5 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Pineapple Sugarcane Juice</span><span
-                                class="menu-item-price">₹30</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पायनॅपल ऊसाचा रस</div>
-                        <div class="menu-item-desc">Blended with fresh pineapple</div>
+
+                <!-- 5. Extra Large Glass -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Extra Large Glass<br>मोठा ग्लास</span>
+                        <span class="menu-item-price">₹25</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-glass-whiskey"></i> मोठा ग्लास</div>
+                    <div class="menu-item-desc">Extra large serving for big thirsts</div>
                 </div>
-                <!-- 6 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Fruit Juice (Full)</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> फ्रूट ज्यूस (फुल)</div>
-                        <div class="menu-item-desc">Mixed seasonal fruits</div>
+
+                <!-- 6. Pineapple Sugarcane Juice -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Pineapple Sugarcane Juice<br>पायनॅपल ऊसाचा रस</span>
+                        <span class="menu-item-price">₹40</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पायनॅपलसह</div>
+                    <div class="menu-item-desc">Blended with fresh pineapple</div>
                 </div>
-                <!-- 7 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Fruit Juice (Half)</span><span
-                                class="menu-item-price">₹25</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> फ्रूट ज्यूस (हाफ)</div>
-                        <div class="menu-item-desc">Mixed fruits, half glass</div>
+
+                <!-- 7. Mix Fruit Glass -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Mix Fruit Glass<br>मिक्स फ्रूट ग्लास</span>
+                        <span class="menu-item-price">₹40</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> मिक्स फळे</div>
+                    <div class="menu-item-desc">Mixed seasonal fruits in a glass</div>
                 </div>
-                <!-- 8 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Pineapple Juice</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पायनॅपल ज्यूस</div>
-                        <div class="menu-item-desc">Pure pineapple crush</div>
+
+                <!-- 8. Mix Fruit Juice -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Mix Fruit Juice<br>मिक्स फ्रूट ज्यूस</span>
+                        <span class="menu-item-price">₹70</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> प्रीमियम मिक्स</div>
+                    <div class="menu-item-desc">Premium mixed fruit juice</div>
                 </div>
-                <!-- 9 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Apple Juice</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ॲपल ज्यूस</div>
-                        <div class="menu-item-desc">Fresh apple blend</div>
+
+                <!-- 9. Pineapple Juice -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Pineapple Juice<br>पायनॅपल ज्यूस</span>
+                        <span class="menu-item-price">₹50</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> शुद्ध पायनॅपल</div>
+                    <div class="menu-item-desc">Pure pineapple crush</div>
                 </div>
-                <!-- 10 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Mosambi Juice</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> मोसंबी ज्यूस</div>
-                        <div class="menu-item-desc">Sweet lime juice</div>
+
+                <!-- 10. Fruit Juice -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Fruit Juice<br>फ्रूट ज्यूस</span>
+                        <span class="menu-item-price">₹60</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताजे फळांचे रस</div>
+                    <div class="menu-item-desc">Fresh fruit juice</div>
                 </div>
-                <!-- 11 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Chikoo Juice</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> चिकू ज्यूस</div>
-                        <div class="menu-item-desc">Creamy chikoo shake style</div>
+
+                <!-- 11. Lassi (Full) -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Lassi (Full)<br>लस्सी (फुल)</span>
+                        <span class="menu-item-price">₹50</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> घट्ट दही</div>
+                    <div class="menu-item-desc">Thick creamy yogurt lassi</div>
                 </div>
-                <!-- 12 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Mango Juice</span><span
-                                class="menu-item-price">₹40</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> मॅंगो ज्यूस</div>
-                        <div class="menu-item-desc">Alphonso mango pulp</div>
+
+                <!-- 12. Lassi (Half) -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Lassi (Half)<br>लस्सी (हाफ)</span>
+                        <span class="menu-item-price">₹30</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताजे दही</div>
+                    <div class="menu-item-desc">Refreshing yogurt drink</div>
                 </div>
-                <!-- 13 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Lassi (Full)</span><span
-                                class="menu-item-price">₹50</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> लस्सी (फुल)</div>
-                        <div class="menu-item-desc">Thick creamy yogurt lassi</div>
+
+                <!-- 13. Cold Buttermilk -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Cold Buttermilk<br>थंडगार ताक</span>
+                        <span class="menu-item-price">₹20</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताक</div>
+                    <div class="menu-item-desc">Refreshing buttermilk</div>
                 </div>
-                <!-- 14 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Lassi (Half)</span><span
-                                class="menu-item-price">₹30</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> लस्सी (हाफ)</div>
-                        <div class="menu-item-desc">Refreshing yogurt drink</div>
+
+                <!-- 14. Lemon Sharbat -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Lemon Sharbat<br>लिंबू शरबत</span>
+                        <span class="menu-item-price">₹30</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> ताजे लिंबू</div>
+                    <div class="menu-item-desc">Fresh lemon sweet drink</div>
                 </div>
-                <!-- 15 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Coconut Water</span><span
-                                class="menu-item-price">₹50</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> नारळपाणी</div>
-                        <div class="menu-item-desc">Tender coconut, chilled</div>
+
+                <!-- 15. Coconut Water -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Coconut Water<br>नारळ पाणी</span>
+                        <span class="menu-item-price">₹50</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> थंडगार नारळ</div>
+                    <div class="menu-item-desc">Tender coconut, chilled</div>
                 </div>
-                <!-- 16 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Jaggery Tea</span><span
-                                class="menu-item-price">₹10</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> गुळाचा चहा</div>
-                        <div class="menu-item-desc">Traditional jaggery tea</div>
+
+                <!-- 16. Water Bottle -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Water Bottle<br>पाणी बॉटल</span>
+                        <span class="menu-item-price">₹20</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> १ लिटर पॅक</div>
+                    <div class="menu-item-desc">1 litre packaged drinking water</div>
                 </div>
-                <!-- 17 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Sugar Tea</span><span
-                                class="menu-item-price">₹10</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> साखरेचा चहा</div>
-                        <div class="menu-item-desc">Regular milk tea</div>
+
+                <!-- 17. Jaggery Tea -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Jaggery Tea<br>गुळाचा चहा</span>
+                        <span class="menu-item-price">₹10</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> पारंपारिक चहा</div>
+                    <div class="menu-item-desc">Traditional jaggery tea</div>
                 </div>
-                <!-- 18 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Jeera Soda</span><span
-                                class="menu-item-price">₹10</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> जिरा सोडा</div>
-                        <div class="menu-item-desc">Cumin flavored soda</div>
+
+                <!-- 18. Sugar Tea -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Sugar Tea<br>साखरेचा चहा</span>
+                        <span class="menu-item-price">₹10</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-leaf"></i> नेहमीचा चहा</div>
+                    <div class="menu-item-desc">Regular milk tea</div>
                 </div>
-                <!-- 19 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Cold Drink (250 ml)</span><span
-                                class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> कोल्ड ड्रिंक (250 ml)</div>
-                        <div class="menu-item-desc">Assorted brands</div>
+
+                <!-- 19. Coffee -->
+                <div class="menu-card reveal delay-1">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Coffee<br>कॉफी</span>
+                        <span class="menu-item-price">₹30</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-mug-hot"></i> ताजी कॉफी</div>
+                    <div class="menu-item-desc">Fresh hot coffee</div>
                 </div>
-                <!-- 20 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Ice Cream (90 ml)</span><span
-                                class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> आइस क्रीम (90 ml)</div>
-                        <div class="menu-item-desc">Vanilla / strawberry</div>
+
+                <!-- 20. Pohe -->
+                <div class="menu-card reveal delay-2">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Pohe<br>पोहे</span>
+                        <span class="menu-item-price">₹25</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-utensils"></i> गरमागरम नाश्ता</div>
+                    <div class="menu-item-desc">Freshly prepared Maharashtrian snack</div>
                 </div>
-                <!-- 21 -->
-                <div class="menu-item">
-                    <div class="menu-item-content">
-                        <div class="menu-item-header"><span class="menu-item-name">Bisleri Water Bottle</span><span
-                                class="menu-item-price">₹20</span></div>
-                        <div class="menu-item-marathi"><i class="fas fa-leaf"></i> बिसलेरी बॉटल</div>
-                        <div class="menu-item-desc">1 litre pack</div>
+
+                <!-- 21. Snacks -->
+                <div class="menu-card reveal delay-3">
+                    <div class="menu-card-header">
+                        <span class="menu-item-name">Snacks<br>स्नॅक्स</span>
+                        <span class="menu-item-price">₹40</span>
                     </div>
+                    <div class="menu-item-marathi"><i class="fas fa-utensils"></i> चटकदार नाश्ता</div>
+                    <div class="menu-item-desc">Assorted tasty snacks</div>
                 </div>
-                <!-- 22 & 23? actually we have 21 items from list, but user gave 21 lines? let's double-check: from sugarcane(full) to bisleri = 21. We'll keep all. If any missing like 'special without lemon' already included (item4). So fine -->
             </div>
-            <!-- extra line: total items match given table (21 items) -->
         </div>
     </section>
 
-    <!-- Hygiene Section (remains) -->
+    <!-- Enhanced Hygiene Section -->
     <section class="hygiene">
         <div class="container">
-            <div class="hygiene-content">
-                <h2>Hygiene & Quality</h2>
-                <p>We use clean water and pure R.O. filtered ice in all our preparations.</p>
-                <p>Cleanliness and comfort are our top priorities — from preparation to your seat!</p>
-                <div class="hygiene-icons">
-                    <div class="hygiene-icon"><i class="fas fa-hand-sparkles"></i>
-                        <p>Clean Hands</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-filter"></i>
-                        <p>RO Filtered Water</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-utensils"></i>
-                        <p>Sanitized Utensils</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-leaf"></i>
-                        <p>Fresh Ingredients</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-chair"></i>
-                        <p>Clean Seating Area</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-glass-whiskey"></i>
-                        <p>Spotless Glasses</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-broom"></i>
-                        <p>Regular Cleaning</p>
-                    </div>
-                    <div class="hygiene-icon"><i class="fas fa-seedling"></i>
-                        <p>Clean & Fresh Environment</p>
-                    </div>
+            <h2 class="reveal">Hygiene & Quality | स्वच्छता आणि गुणवत्ता</h2>
+            <p class="reveal delay-1">We use clean water and pure R.O. filtered ice in all our preparations. | आम्ही
+                सर्व तयारीमध्ये स्वच्छ पाणी आणि शुद्ध R.O. फिल्टर केलेला बर्फ वापरतो.</p>
+            <p class="reveal delay-2">Our commitment to hygiene is uncompromising, ensuring every sip is safe and
+                refreshing. | स्वच्छतेबद्दलची आमची वचनबद्धता अढळ आहे, प्रत्येक घोट सुरक्षित आणि ताजेतवाने आहे याची
+                खात्री देते.</p>
+
+            <div class="hygiene-icons">
+                <div class="hygiene-icon reveal delay-1">
+                    <i class="fas fa-hand-sparkles"></i>
+                    <p>Sanitized Hands<br>निर्जंतुक हात</p>
+                </div>
+                <div class="hygiene-icon reveal delay-1">
+                    <i class="fas fa-filter"></i>
+                    <p>R.O. Filtered Water<br>R.O. फिल्टर पाणी</p>
+                </div>
+                <div class="hygiene-icon reveal delay-2">
+                    <i class="fas fa-pump-soap"></i>
+                    <p>Regular Sanitization<br>नियमित निर्जंतुकीकरण</p>
+                </div>
+                <div class="hygiene-icon reveal delay-2">
+                    <i class="fas fa-leaf"></i>
+                    <p>Fresh Ingredients<br>ताजे घटक</p>
+                </div>
+                <div class="hygiene-icon reveal delay-3">
+                    <i class="fas fa-chair"></i>
+                    <p>Clean Seating Area<br>स्वच्छ बैठक व्यवस्था</p>
+                </div>
+                <div class="hygiene-icon reveal delay-3">
+                    <i class="fas fa-glass-whiskey"></i>
+                    <p>Spotless Glasses<br>डागमुक्त ग्लास</p>
+                </div>
+                <div class="hygiene-icon reveal delay-1">
+                    <i class="fas fa-broom"></i>
+                    <p>Daily Deep Cleaning<br>दररोज सखोल साफसफाई</p>
+                </div>
+                <div class="hygiene-icon reveal delay-2">
+                    <i class="fas fa-check-double"></i>
+                    <p>Quality Checked<br>गुणवत्ता तपासणी</p>
                 </div>
             </div>
         </div>
@@ -1008,38 +1544,91 @@
     <!-- Locations Section -->
     <section class="locations">
         <div class="container">
-            <div class="section-title">
-                <h2>Our Locations</h2>
+            <div class="section-title reveal">
+                <h2>Our Locations | आमची ठिकाणे</h2>
             </div>
-            <div class="location-cards">
-                <div class="location-card">
+            <div class="location-grid">
+
+                <!-- Branch 1 -->
+                <div class="location-card reveal delay-1">
                     <div class="location-map">
                         <div class="map-preview"
-                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:A%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
-                            <div class="map-overlay">Main Branch - Shrirampur</div>
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:red%7Clabel:1%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                            <div class="map-overlay">Main Branch</div>
                         </div>
                     </div>
                     <div class="location-info">
-                        <h3>Main Branch</h3>
+                        <h3>Main Branch | मुख्य शाखा</h3>
                         <p>Shrirampur, Maharashtra</p>
                         <a href="https://maps.app.goo.gl/xDoQ9sAeo6GCViH87" class="location-link" target="_blank">View
-                            on Google Maps →</a>
+                            on Google Maps <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
-                <div class="location-card">
+
+                <!-- Branch 2 -->
+                <div class="location-card reveal delay-2">
                     <div class="location-map">
                         <div class="map-preview"
-                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:yellow%7Clabel:B%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
-                            <div class="map-overlay">Second Branch - Shrirampur</div>
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:red%7Clabel:2%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                            <div class="map-overlay">Second Branch</div>
                         </div>
                     </div>
                     <div class="location-info">
-                        <h3>Second Branch</h3>
+                        <h3>Second Branch | दुसरी शाखा</h3>
                         <p>Shrirampur, Maharashtra</p>
                         <a href="https://maps.app.goo.gl/QtuGkue6Bg32L6mM9" class="location-link" target="_blank">View
-                            on Google Maps →</a>
+                            on Google Maps <i class="fas fa-arrow-right"></i></a>
                     </div>
                 </div>
+
+                <!-- Branch 3 -->
+                <div class="location-card reveal delay-3">
+                    <div class="location-map">
+                        <div class="map-preview"
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:red%7Clabel:3%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                            <div class="map-overlay">Branch 3</div>
+                        </div>
+                    </div>
+                    <div class="location-info">
+                        <h3>Third Branch | तिसरी शाखा</h3>
+                        <p>Shrirampur, Maharashtra</p>
+                        <a href="https://maps.app.goo.gl/e1V9VBUdm2Hhrie68" class="location-link" target="_blank">View
+                            on Google Maps <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <!-- Branch 4 (Temporarily Closed) -->
+                <div class="location-card reveal delay-1">
+                    <div class="location-map">
+                        <div class="map-preview"
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:orange%7Clabel:4%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                            <div class="map-overlay">Branch 4</div>
+                        </div>
+                    </div>
+                    <div class="location-info">
+                        <h3>Fourth Branch | चौथी शाखा</h3>
+                        <p>JM96+GX5 Shrirampur, Maharashtra</p>
+                        <a href="https://maps.app.goo.gl/N6pDZd149WA2yDgw5" class="location-link" target="_blank">View
+                            on Google Maps <i class="fas fa-arrow-right"></i></a>
+                        <span class="status-badge closed"><i class="fas fa-pause-circle"></i> Temporarily Closed |
+                            तात्पुरते बंद</span>
+                    </div>
+                </div>
+
+                <!-- Branch 5 (Coming Soon) -->
+                <div class="location-card reveal delay-2">
+                    <div class="location-map"
+                        style="background: #e0e0e0; display: flex; align-items: center; justify-content: center;">
+                        <i class="fas fa-hard-hat" style="font-size: 4rem; color: #a0a0a0;"></i>
+                    </div>
+                    <div class="location-info">
+                        <h3>Fifth Branch | पाचवी शाखा</h3>
+                        <p>Location to be announced soon.</p>
+                        <span class="status-badge coming-soon"><i class="fas fa-clock"></i> Coming Soon | लवकरच येत
+                            आहे</span>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -1049,17 +1638,19 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Dnyaneshwar Raswanti & Cold Drinks</h3>
-                    <p>Refreshment Redefined Since 1991. Serving Shrirampur with quality beverages for over three
+                    <h3>Dnyaneshwar Raswanti</h3>
+                    <p>Refreshment Redefined Since 1981. Serving Shrirampur with quality beverages for over four
                         decades.</p>
+                    <p>१९८१ पासून ताजेपणाची नवी व्याख्या. श्रीरामपूरला चार दशकांहून अधिक काळ दर्जेदार पेये पुरवत आहोत.
+                    </p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
+                    <h3>Contact Info | संपर्क</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-map-marker-alt"></i> Shrirampur, Ahilyanagar, Maharashtra</li>
                         <li><i class="fas fa-phone"></i> +91 9860745626</li>
@@ -1077,44 +1668,24 @@
     </footer>
 
     <script>
-        // Smooth Scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                if (targetId === '#') return;
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
+        // Set current year dynamically
+        document.getElementById("year").textContent = new Date().getFullYear();
+
+        // Scroll Reveal Animation using Intersection Observer
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
                 }
             });
+        }, {
+            threshold: 0.15,
+            rootMargin: "0px 0px -50px 0px"
         });
 
-        // Disable zoom
-        document.addEventListener('wheel', function (e) {
-            if (e.ctrlKey) {
-                e.preventDefault();
-            }
-        }, { passive: false });
-
-        document.addEventListener('touchstart', function (e) {
-            if (e.touches.length > 1) {
-                e.preventDefault();
-            }
-        });
-
-        let lastTouchEnd = 0;
-        document.addEventListener('touchend', function (e) {
-            const now = (new Date()).getTime();
-            if (now - lastTouchEnd <= 300) {
-                e.preventDefault();
-            }
-            lastTouchEnd = now;
-        }, false);
-        document.getElementById("year").textContent = new Date().getFullYear();
+        revealElements.forEach(el => observer.observe(el));
     </script>
 </body>
 
