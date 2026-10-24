@@ -12,22 +12,21 @@
 
     <style>
         :root {
-            /* Fresh & Refreshing Palette */
-            --primary-blue: #0F4C81;
-            --primary-blue-light: #2E86C1;
-            --primary-blue-dark: #0A2A4A;
-            --accent-yellow: #F4D03F;
-            --accent-yellow-hover: #F1C40F;
-            --accent-green: #27AE60;
-            --accent-red: #E74C3C;
-            --fresh-white: #FBFCFC;
-            --light-bg: #F0F8FF;
+            /* Fresh, Ultra-Clean Palette */
+            --primary-blue: #0077B6;
+            --primary-blue-dark: #023E8A;
+            --accent-cyan: #00B4D8;
+            --accent-yellow: #FFD60A;
+            --accent-green: #2A9D8F;
+            --accent-red: #E63946;
+            --fresh-bg: #F8FDFF;
+            --light-cyan: #CAF0F8;
             --white: #FFFFFF;
-            --text-dark: #2C3E50;
-            --text-light: #5D6D7E;
-            --shadow-soft: 0 10px 30px rgba(15, 76, 129, 0.06);
-            --shadow-strong: 0 20px 50px rgba(15, 76, 129, 0.15);
-            --transition: all 0.45s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --text-dark: #1B263B;
+            --text-light: #415A77;
+            --shadow-soft: 0 8px 24px rgba(0, 119, 182, 0.08);
+            --shadow-strong: 0 16px 40px rgba(0, 119, 182, 0.15);
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         * {
@@ -42,16 +41,16 @@
         }
 
         body {
-            background-color: var(--fresh-white);
+            background-color: var(--fresh-bg);
             color: var(--text-dark);
             line-height: 1.7;
             overflow-x: hidden;
-            position: relative;
             width: 100%;
+            position: relative;
         }
 
-        /* ---------- FLOATING BACKGROUND ANIMATION ---------- */
-        .bg-animation {
+        /* ---------- LIGHT GEOMETRIC BACKGROUND ---------- */
+        .bg-geometry {
             position: fixed;
             top: 0;
             left: 0;
@@ -60,92 +59,105 @@
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
-            background: linear-gradient(135deg, var(--fresh-white) 0%, var(--light-bg) 100%);
+            background: radial-gradient(circle at top right, var(--light-cyan), transparent 40%),
+                radial-gradient(circle at bottom left, #E0F7FA, transparent 40%);
         }
 
-        .bg-animation span {
+        /* Floating Circles */
+        .geo-circle {
             position: absolute;
-            display: block;
-            background: rgba(46, 134, 193, 0.08);
             border-radius: 50%;
-            animation: floatUp 20s linear infinite;
-            bottom: -150px;
+            background: rgba(0, 180, 216, 0.08);
+            animation: floatShape 25s linear infinite;
         }
 
-        .bg-animation span:nth-child(1) {
-            left: 10%;
+        .geo-circle:nth-child(1) {
+            width: 150px;
+            height: 150px;
+            top: 10%;
+            left: -50px;
+            animation-duration: 30s;
+        }
+
+        .geo-circle:nth-child(2) {
             width: 80px;
             height: 80px;
-            animation-duration: 18s;
-        }
-
-        .bg-animation span:nth-child(2) {
-            left: 20%;
-            width: 30px;
-            height: 30px;
-            animation-duration: 14s;
-            animation-delay: 2s;
-        }
-
-        .bg-animation span:nth-child(3) {
-            left: 35%;
-            width: 60px;
-            height: 60px;
+            top: 60%;
+            left: 10%;
             animation-duration: 22s;
-            animation-delay: 4s;
-        }
-
-        .bg-animation span:nth-child(4) {
-            left: 50%;
-            width: 40px;
-            height: 40px;
-            animation-duration: 16s;
-            animation-delay: 0s;
-        }
-
-        .bg-animation span:nth-child(5) {
-            left: 65%;
-            width: 90px;
-            height: 90px;
-            animation-duration: 25s;
             animation-delay: 5s;
         }
 
-        .bg-animation span:nth-child(6) {
-            left: 75%;
-            width: 25px;
-            height: 25px;
-            animation-duration: 12s;
-            animation-delay: 1s;
+        .geo-circle:nth-child(3) {
+            width: 200px;
+            height: 200px;
+            top: 80%;
+            left: 80%;
+            animation-duration: 35s;
+            animation-delay: 2s;
         }
 
-        .bg-animation span:nth-child(7) {
-            left: 85%;
-            width: 50px;
-            height: 50px;
-            animation-duration: 19s;
+        /* Floating Triangles */
+        .geo-triangle {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+            border-bottom: 86px solid rgba(255, 214, 10, 0.06);
+            animation: floatShape 28s linear infinite reverse;
+        }
+
+        .geo-triangle:nth-child(4) {
+            top: 20%;
+            left: 80%;
+            animation-duration: 32s;
+        }
+
+        .geo-triangle:nth-child(5) {
+            top: 70%;
+            left: 30%;
+            animation-duration: 26s;
+            animation-delay: 8s;
+        }
+
+        /* Floating Squares */
+        .geo-square {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            background: rgba(0, 119, 182, 0.04);
+            transform: rotate(45deg);
+            animation: floatShape 22s linear infinite;
+        }
+
+        .geo-square:nth-child(6) {
+            top: 40%;
+            left: 15%;
+            animation-duration: 24s;
             animation-delay: 3s;
         }
 
-        .bg-animation span:nth-child(8) {
-            left: 95%;
-            width: 70px;
-            height: 70px;
-            animation-duration: 21s;
-            animation-delay: 6s;
+        .geo-square:nth-child(7) {
+            top: 85%;
+            left: 60%;
+            animation-duration: 30s;
+            animation-delay: 1s;
         }
 
-        @keyframes floatUp {
+        @keyframes floatShape {
             0% {
                 transform: translateY(0) rotate(0deg);
+                opacity: 0.8;
+            }
+
+            50% {
                 opacity: 1;
-                border-radius: 50%;
             }
 
             100% {
-                transform: translateY(-1200px) rotate(720deg);
-                opacity: 0;
-                border-radius: 15%;
+                transform: translateY(-150px) rotate(360deg);
+                opacity: 0.8;
             }
         }
 
@@ -158,18 +170,18 @@
             width: 100%;
         }
 
-        /* ---------- HEADER (FIXED FOR MOBILE) ---------- */
+        /* ---------- HEADER (MOBILE OPTIMIZED) ---------- */
         header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
             color: var(--text-dark);
-            padding: 10px 0;
+            padding: 12px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            border-bottom: 3px solid var(--accent-yellow);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border-bottom: 3px solid var(--accent-cyan);
             transition: var(--transition);
             width: 100%;
         }
@@ -179,15 +191,14 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 15px;
         }
 
         .logo-section {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 15px;
             flex: 1;
-            min-width: 250px;
         }
 
         .logo-circle {
@@ -199,8 +210,8 @@
             align-items: center;
             justify-content: center;
             overflow: hidden;
-            box-shadow: 0 4px 10px rgba(15, 76, 129, 0.15);
-            border: 2px solid var(--primary-blue-light);
+            box-shadow: 0 4px 12px rgba(0, 119, 182, 0.15);
+            border: 2px solid var(--accent-cyan);
             flex-shrink: 0;
             transition: var(--transition);
         }
@@ -237,43 +248,32 @@
             letter-spacing: 0.5px;
         }
 
+        /* Tagline hidden on mobile, shown on desktop */
         .tagline {
             text-align: right;
             font-size: 0.9rem;
             font-style: italic;
             font-weight: 600;
             color: var(--primary-blue);
-            max-width: 300px;
+            max-width: 320px;
             transition: var(--transition);
         }
 
         .tagline:hover {
             transform: scale(1.02);
-            color: var(--accent-yellow-hover);
+            color: var(--accent-cyan);
         }
 
         /* ---------- HERO ---------- */
         .hero {
-            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+            background: linear-gradient(135deg, var(--primary-blue-dark) 0%, var(--primary-blue) 50%, var(--accent-cyan) 100%);
             color: var(--white);
-            padding: 100px 0 80px;
+            padding: 110px 0 90px;
             text-align: center;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
-            margin-bottom: -40px;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.08)" stroke-width="2" fill="none"/></svg>');
-            opacity: 0.6;
-            pointer-events: none;
+            clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+            margin-bottom: -30px;
         }
 
         .hero-content {
@@ -286,8 +286,8 @@
             margin-bottom: 15px;
             font-weight: 900;
             color: var(--accent-yellow);
-            text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.3);
-            animation: slideDown 1s cubic-bezier(0.25, 0.8, 0.25, 1);
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            animation: slideDown 1s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .hero p {
@@ -296,7 +296,7 @@
             margin: 0 auto 30px;
             font-weight: 400;
             line-height: 1.6;
-            animation: slideUp 1.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: slideUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn {
@@ -313,7 +313,7 @@
             border: 2px solid transparent;
             text-transform: uppercase;
             letter-spacing: 1px;
-            animation: zoomIn 1.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+            animation: zoomIn 1.5s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .btn:hover {
@@ -385,7 +385,7 @@
             position: absolute;
             width: 70px;
             height: 4px;
-            background: var(--accent-yellow);
+            background: var(--accent-cyan);
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
@@ -440,10 +440,10 @@
             width: 100%;
             max-width: 350px;
             aspect-ratio: 1 / 1;
-            background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
+            background: linear-gradient(135deg, var(--accent-cyan), var(--primary-blue));
             border-radius: 50%;
             padding: 15px;
-            box-shadow: 0 15px 35px rgba(15, 76, 129, 0.25);
+            box-shadow: 0 15px 35px rgba(0, 119, 182, 0.25);
             position: relative;
             animation: pulseGlow 4s infinite alternate;
             display: flex;
@@ -504,11 +504,11 @@
 
         @keyframes pulseGlow {
             0% {
-                box-shadow: 0 15px 35px rgba(15, 76, 129, 0.25);
+                box-shadow: 0 15px 35px rgba(0, 119, 182, 0.25);
             }
 
             100% {
-                box-shadow: 0 15px 50px rgba(46, 134, 193, 0.5);
+                box-shadow: 0 15px 50px rgba(0, 180, 216, 0.5);
             }
         }
 
@@ -539,7 +539,7 @@
         /* ---------- MODERN MENU CARDS ---------- */
         .menu-section {
             padding: 100px 0;
-            background: var(--light-bg);
+            background: var(--fresh-bg);
             position: relative;
         }
 
@@ -570,7 +570,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(244, 208, 63, 0.1) 0%, transparent 100%);
+            background: linear-gradient(135deg, rgba(255, 214, 10, 0.1) 0%, transparent 100%);
             opacity: 0;
             transition: var(--transition);
         }
@@ -610,7 +610,7 @@
             border-radius: 30px;
             font-weight: 800;
             font-size: 1rem;
-            box-shadow: 0 4px 10px rgba(244, 208, 63, 0.4);
+            box-shadow: 0 4px 10px rgba(255, 214, 10, 0.4);
             white-space: nowrap;
             transition: var(--transition);
         }
@@ -641,7 +641,7 @@
             font-size: 0.9rem;
             color: var(--text-light);
             font-weight: 500;
-            border-left: 3px solid var(--accent-yellow);
+            border-left: 3px solid var(--accent-cyan);
             padding-left: 10px;
             position: relative;
             z-index: 1;
@@ -649,7 +649,7 @@
         }
 
         .menu-note-box {
-            background: linear-gradient(135deg, var(--primary-blue), var(--primary-blue-light));
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
             color: var(--white);
             padding: 25px;
             border-radius: 20px;
@@ -695,18 +695,6 @@
             color: var(--white);
             text-align: center;
             position: relative;
-        }
-
-        .hygiene::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="40" stroke="rgba(255,255,255,0.03)" stroke-width="2" fill="none"/></svg>');
-            opacity: 0.5;
-            pointer-events: none;
         }
 
         .hygiene h2 {
@@ -755,12 +743,13 @@
         .hygiene-icon i {
             font-size: 2.2rem;
             margin-bottom: 12px;
-            color: var(--accent-yellow);
+            color: var(--accent-cyan);
             transition: var(--transition);
         }
 
         .hygiene-icon:hover i {
             transform: scale(1.1) rotate(8deg);
+            color: var(--accent-yellow);
         }
 
         .hygiene-icon p {
@@ -783,7 +772,7 @@
         }
 
         .location-card {
-            background: var(--light-bg);
+            background: var(--fresh-bg);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: var(--shadow-soft);
@@ -796,7 +785,7 @@
         .location-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-strong);
-            border-bottom-color: var(--accent-yellow);
+            border-bottom-color: var(--accent-cyan);
         }
 
         .location-map {
@@ -823,7 +812,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(15, 76, 129, 0.65);
+            background: rgba(2, 62, 138, 0.65);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -836,7 +825,7 @@
         }
 
         .location-card:hover .map-overlay {
-            background: rgba(15, 76, 129, 0.85);
+            background: rgba(2, 62, 138, 0.85);
         }
 
         .location-info {
@@ -880,12 +869,12 @@
             height: 2px;
             bottom: 0;
             left: 0;
-            background: var(--accent-yellow);
+            background: var(--accent-cyan);
             transition: width 0.3s ease;
         }
 
         .location-link:hover {
-            color: var(--accent-yellow-hover);
+            color: var(--accent-cyan);
         }
 
         .location-link:hover::after {
@@ -905,15 +894,15 @@
         }
 
         .status-badge.closed {
-            background: rgba(231, 76, 60, 0.1);
+            background: rgba(230, 57, 70, 0.1);
             color: var(--accent-red);
-            border: 1px solid rgba(231, 76, 60, 0.3);
+            border: 1px solid rgba(230, 57, 70, 0.3);
         }
 
         .status-badge.coming-soon {
-            background: rgba(39, 174, 96, 0.1);
+            background: rgba(42, 157, 143, 0.1);
             color: var(--accent-green);
-            border: 1px solid rgba(39, 174, 96, 0.3);
+            border: 1px solid rgba(42, 157, 143, 0.3);
         }
 
         /* ---------- FOOTER ---------- */
@@ -921,7 +910,7 @@
             background: var(--primary-blue-dark);
             color: var(--white);
             padding: 60px 0 20px;
-            border-top: 6px solid var(--accent-yellow);
+            border-top: 6px solid var(--accent-cyan);
         }
 
         .footer-content {
@@ -944,7 +933,7 @@
             position: absolute;
             width: 35px;
             height: 3px;
-            background: var(--accent-yellow);
+            background: var(--accent-cyan);
             bottom: 0;
             left: 0;
             border-radius: 3px;
@@ -970,7 +959,7 @@
         }
 
         .footer-links i {
-            color: var(--accent-yellow);
+            color: var(--accent-cyan);
             width: 18px;
             text-align: center;
             font-size: 1rem;
@@ -997,10 +986,10 @@
         }
 
         .social-links a:hover {
-            background: var(--accent-yellow);
+            background: var(--accent-cyan);
             color: var(--primary-blue-dark);
             transform: translateY(-4px) scale(1.05);
-            border-color: var(--accent-yellow);
+            border-color: var(--accent-cyan);
         }
 
         .copyright {
@@ -1011,11 +1000,22 @@
             color: #95A5A6;
         }
 
+        /* Mobile Footer Tagline */
+        .mobile-footer-tagline {
+            display: none;
+            text-align: center;
+            font-style: italic;
+            font-weight: 600;
+            color: var(--accent-yellow);
+            margin-bottom: 20px;
+            font-size: 0.95rem;
+        }
+
         /* ---------- SCROLL ANIMATIONS ---------- */
         .reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal.active {
@@ -1026,7 +1026,7 @@
         .reveal-left {
             opacity: 0;
             transform: translateX(-40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-left.active {
@@ -1037,7 +1037,7 @@
         .reveal-right {
             opacity: 0;
             transform: translateX(40px);
-            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
         .reveal-right.active {
@@ -1057,7 +1057,7 @@
             transition-delay: 0.3s;
         }
 
-        /* ---------- RESPONSIVE (FIXED HEADER FOR MOBILE) ---------- */
+        /* ---------- RESPONSIVE ---------- */
         @media (max-width: 992px) {
             .hero h2 {
                 font-size: 2.4rem;
@@ -1074,22 +1074,25 @@
 
         @media (max-width: 768px) {
 
-            /* Fix Header for Mobile */
+            /* Hide tagline in header on mobile */
+            .tagline {
+                display: none;
+            }
+
+            /* Show tagline in footer on mobile */
+            .mobile-footer-tagline {
+                display: block;
+            }
+
             .header-content {
                 flex-direction: column;
                 text-align: center;
-                gap: 8px;
+                gap: 10px;
             }
 
             .logo-section {
                 justify-content: center;
-                min-width: 100%;
-            }
-
-            .tagline {
-                text-align: center;
-                max-width: 100%;
-                font-size: 0.85rem;
+                width: 100%;
             }
 
             .hero h2 {
@@ -1150,10 +1153,6 @@
 
             .logo-text p {
                 font-size: 0.7rem;
-            }
-
-            .tagline {
-                font-size: 0.8rem;
             }
 
             .section-title h2 {
@@ -1219,10 +1218,15 @@
 </head>
 
 <body>
-    <!-- Animated Background -->
-    <div class="bg-animation">
-        <span></span><span></span><span></span><span></span>
-        <span></span><span></span><span></span><span></span>
+    <!-- Light Geometric Animated Background -->
+    <div class="bg-geometry">
+        <div class="geo-circle"></div>
+        <div class="geo-circle"></div>
+        <div class="geo-circle"></div>
+        <div class="geo-triangle"></div>
+        <div class="geo-triangle"></div>
+        <div class="geo-square"></div>
+        <div class="geo-square"></div>
     </div>
 
     <!-- Header -->
@@ -1238,6 +1242,7 @@
                         <p>DNYANESHWAR RASWANTI & COLD DRINKS</p>
                     </div>
                 </div>
+                <!-- This tagline is hidden on mobile via CSS -->
                 <div class="tagline">
                     <p>"चव इतकी भारी, भावना सुंदर सारी!"<br>"Taste So Fine, Feel Divine!"</p>
                 </div>
@@ -1591,11 +1596,11 @@
                     </div>
                 </div>
 
-                <!-- Branch 2 -->
+                <!-- Branch 2 (Temporarily Closed) -->
                 <div class="location-card reveal delay-2">
                     <div class="location-map">
                         <div class="map-preview"
-                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:red%7Clabel:2%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
+                            style="background-image: url('https://maps.googleapis.com/maps/api/staticmap?center=Shrirampur,Maharashtra&zoom=15&size=400x200&maptype=roadmap&markers=color:orange%7Clabel:2%7CShrirampur,Maharashtra&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8')">
                             <div class="map-overlay">Second Branch</div>
                         </div>
                     </div>
@@ -1604,6 +1609,8 @@
                         <p>Shrirampur, Maharashtra</p>
                         <a href="https://maps.app.goo.gl/QtuGkue6Bg32L6mM9" class="location-link" target="_blank">View
                             on Google Maps <i class="fas fa-arrow-right"></i></a>
+                        <span class="status-badge closed"><i class="fas fa-pause-circle"></i> Temporarily Closed |
+                            तात्पुरते बंद</span>
                     </div>
                 </div>
 
@@ -1662,6 +1669,11 @@
     <!-- Footer -->
     <footer>
         <div class="container">
+            <!-- Mobile Only Tagline -->
+            <div class="mobile-footer-tagline">
+                "चव इतकी भारी, भावना सुंदर सारी!"<br>"Taste So Fine, Feel Divine!"
+            </div>
+
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Dnyaneshwar Raswanti</h3>
