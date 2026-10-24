@@ -1,12 +1,9 @@
 # 🥤 Dnyaneshwar Raswanti & Cold Drinks
 
 <p align="center">
-  <strong>चव इतकी भारी, भावना सुंदर सारी!</strong><br/>
-  <em>Taste So Fine, Feel Divine!</em>
-</p>
-
-<p align="center">
-  A digital storefront for a local beverage business in Shrirampur, Maharashtra.
+  <strong>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</strong><br/>
+  <em>चव इतकी भारी, भावना सुंदर सारी!</em><br/>
+  <strong>Taste So Fine, Feel Divine!</strong>
 </p>
 
 <p align="center">
@@ -18,91 +15,125 @@
   </a>
 </p>
 
----
+> **Established in 1981 | १९८१ पासून**
+>
+> Refreshing Shrirampur with fresh beverages, traditional flavours, and a commitment to quality for over four decades.
 
-## 📖 About the Project
+## 📖 About the Project | प्रकल्पाची माहिती
 
-**Dnyaneshwar Raswanti & Cold Drinks** is a business website created to establish an online presence for a local beverage shop in Shrirampur, Maharashtra.
+**Dnyaneshwar Raswanti & Cold Drinks** is a bilingual business website for a beverage shop in Shrirampur, Ahilyanagar, Maharashtra.
 
-Established in **1991**, the business serves customers with a selection of refreshing beverages, including fresh sugarcane juice, fruit juices, lassi, tea, cold drinks, coconut water, and ice cream.
+Established in 1981, the business serves a variety of refreshments, including fresh sugarcane juice, fruit juices, lassi, buttermilk, tea, coffee, cold drinks, and snacks. The website presents the business's history, menu, prices, hygiene practices, branch information, and contact details in Marathi and English.
 
-The website presents the business, displays its menu and prices, highlights hygiene practices, and provides location and contact information so customers can conveniently discover the shop.
+The project provides customers with a convenient way to explore the shop's offerings and find location information online.
 
-## 🎯 Project Objectives
+### 🎯 Project Objectives
 
 - Establish a professional online presence for the business.
-- Display the beverage menu with product descriptions and prices.
-- Make business contact details and location information easy to find.
-- Communicate the shop's focus on cleanliness, hygiene, and fresh ingredients.
-- Provide customers with a convenient way to explore available refreshments.
-- Present business information in an accessible, user-friendly format.
+- Showcase the complete beverage and snacks menu with listed prices.
+- Present business information in Marathi and English.
+- Communicate the business's hygiene and quality commitments.
+- Provide branch and contact information for customers.
+- Preserve the traditional identity of the business while maintaining a modern web presence.
 
 ## ✨ Website Features
 
-### 🏠 1. Business Introduction
-- Displays the business name in Marathi and English.
-- Features the brand tagline: “Taste So Fine, Feel Divine!”
-- Highlights the business's history dating back to 1991.
+### 🏠 1. Home Page
+- Business name and branding in Marathi and English.
+- Tagline: “Taste So Fine, Feel Divine!”
+- Establishment year: 1981.
+- Introduction to the shop's products and services.
+- Navigation to the menu and other website sections.
 
-### 🥤 2. Digital Menu
-The website displays a variety of beverages and refreshments, including:
+### 🥤 2. Menu and Pricing | आमचे मेनू
 
-| Category | Menu Items |
-|---|---|
-| Sugarcane Juice | Full, half, no ice, no lemon |
-| Special Juices | Pineapple sugarcane juice |
-| Fruit Juices | Mixed fruit, pineapple, apple, mosambi, chikoo, mango |
-| Dairy Beverages | Full and half lassi |
-| Natural Refreshments | Coconut water |
-| Tea | Jaggery tea and regular sugar tea |
-| Cold Drinks | Packaged cold drinks |
-| Ice Cream | Vanilla and strawberry options |
-| Packaged Water | Bisleri water bottle |
+The website lists the following refreshments and snacks.
 
-The menu includes listed prices in Indian rupees (₹), helping visitors review the available options before visiting.
+| No. | Product | Marathi Name | Price |
+|---:|---|---|---:|
+| 1 | Sugarcane Juice (Full) | ऊसाचा रस (फुल) | ₹20 |
+| 2 | Sugarcane Juice (Half) | ऊसाचा रस (हाफ) | ₹15 |
+| 3 | Sugarcane Without Ice | ऊसाचा रस (बिना बर्फ) | ₹25 |
+| 4 | Sugarcane Without Lemon | ऊसाचा रस (बिना लिंबू) | ₹25 |
+| 5 | Extra Large Glass | मोठा ग्लास | ₹25 |
+| 6 | Pineapple Sugarcane Juice | पायनॅपल ऊसाचा रस | ₹40 |
+| 7 | Mix Fruit Glass | मिक्स फ्रूट ग्लास | ₹40 |
+| 8 | Mix Fruit Juice | मिक्स फ्रूट ज्यूस | ₹70 |
+| 9 | Pineapple Juice | पायनॅपल ज्यूस | ₹50 |
+| 10 | Fruit Juice | फ्रूट ज्यूस | ₹60 |
+| 11 | Lassi (Full) | लस्सी (फुल) | ₹50 |
+| 12 | Lassi (Half) | लस्सी (हाफ) | ₹30 |
+| 13 | Cold Buttermilk | थंडगार ताक | ₹20 |
+| 14 | Lemon Sharbat | लिंबू शरबत | ₹30 |
+| 15 | Coconut Water | नारळ पाणी | ₹50 |
+| 16 | Water Bottle (1 Litre) | पाणी बॉटल | ₹20 |
+| 17 | Jaggery Tea | गुळाचा चहा | ₹10 |
+| 18 | Sugar Tea | साखरेचा चहा | ₹10 |
+| 19 | Coffee | कॉफी | ₹30 |
+| 20 | Pohe | पोहे | ₹25 |
+| 21 | Snacks | स्नॅक्स | ₹40 |
 
-### 💧 3. Hygiene and Quality
-The website communicates the business's stated hygiene practices, including:
+*Prices are in Indian rupees (INR) and reflect the menu information supplied for the website. Prices and availability may change.*
 
-- RO-filtered water and ice.
-- Fresh ingredients.
-- Clean hands and sanitized utensils.
-- Clean glasses and regular cleaning.
-- A clean and comfortable seating environment.
+### 🌿 3. Hygiene and Quality | स्वच्छता आणि गुणवत्ता
 
-### 📍 4. Location Information
-- Displays the shop's locations in Shrirampur, Maharashtra.
-- Provides Google Maps links for location navigation.
-- Helps customers find the business and plan a visit.
+The business highlights its commitment to cleanliness and responsible beverage preparation.
 
-### 📞 5. Contact Information
-The website provides the following contact details:
+- **R.O. Filtered Ice:** Use of RO-filtered ice.
+- **Clean Water:** Emphasis on clean water for preparations.
+- **Sanitized Hands:** Hygiene-conscious food handling.
+- **Regular Sanitization:** Routine sanitization practices.
+- **Fresh Ingredients:** Focus on fresh ingredients.
+- **Clean Seating Area:** Attention to customer seating areas.
+- **Spotless Glasses:** Clean serving glasses.
+- **Daily Deep Cleaning:** Daily cleaning practices.
+- **Quality Checks:** Emphasis on product quality.
 
+The website's hygiene message is presented in both English and Marathi.
+
+### 📍 4. Branches and Locations | आमची ठिकाणे
+
+The website lists the following branch entries:
+
+| Branch | Location | Status |
+|---|---|---|
+| Main Branch | Shrirampur, Maharashtra | Listed |
+| Second Branch | Shrirampur, Maharashtra | Listed |
+| Branch 3 | Shrirampur, Maharashtra | Listed |
+| Branch 4 | JM96+GX5, Shrirampur, Maharashtra | Listed |
+| Fifth Branch | Location to be announced | Coming soon |
+
+The fourth branch is marked as temporarily closed on the supplied website content. The fifth branch is marked as coming soon.
+
+Use the Google Maps links on the live website for location navigation. The full street addresses of the first three entries are not specified in the supplied content.
+
+### 📞 5. Contact Information | संपर्क
+
+- **Business:** Dnyaneshwar Raswanti & Cold Drinks
+- **Location:** Shrirampur, Ahilyanagar, Maharashtra, India
 - **Phone:** +91 9860745626
 - **Email:** dnyaneshwarraswanti@gmail.com
-- **Business hours:** 9:00 AM – 9:00 PM
-- **Location:** Shrirampur, Ahilyanagar, Maharashtra, India
+- **Listed business hours:** 9:00 AM – 9:00 PM
 
-### 📱 6. Responsive Layout
-The website includes responsive CSS rules intended to adapt its layout to different screen sizes, including mobile phones and desktop browsers.
-
-### 🎨 7. Visual Design
-- A golden-yellow and warm neutral color palette.
-- Custom business branding and logo.
-- Styled sections for the introduction, menu, hygiene, locations, and contact details.
-- Font Awesome icons for visual elements.
+### 🌐 6. Bilingual Experience
+- English and Marathi business descriptions.
+- Menu items with Marathi translations.
+- Bilingual hygiene information.
+- Branch labels in both languages.
+- Marathi brand tagline and identity.
 
 ## 🛠️ Technology Stack
 
 | Technology | Purpose |
 |---|---|
 | HTML5 | Website structure and content |
-| CSS3 | Styling, layout, animations, and responsive design |
-| Font Awesome 6.4.0 | Icons and visual elements |
-| Google Maps links | Location navigation |
-| Netlify | Live website hosting |
+| CSS3 | Visual styling, layout, and responsive presentation |
+| Font Awesome | Icons, where included in the source |
+| Google Maps links | Branch navigation |
+| Netlify | Website hosting and deployment |
+| Git and GitHub | Source control and project hosting |
 
-The repository's main page is implemented in `index.html`, with the logo and poster stored as image assets. The HTML references Font Awesome through its CDN stylesheet.
+The repository's visible structure identifies `index.html` as the main website file. The basic site can be served as a static website without a dedicated application backend.
 
 ## 📂 Repository Structure
 
@@ -115,87 +146,92 @@ SHOP/
 └── README.md
 ```
 
-## 🚀 Getting Started
+- `index.html` — Main website page.
+- `logo.png` — Business logo.
+- `poster.jpg` — Promotional poster image.
+- `Bill/` — Supporting project directory.
+- `README.md` — Project documentation.
+
+## 🚀 Installation and Setup
 
 ### Prerequisites
-
 - Git
 - A modern web browser
 - A code editor such as Visual Studio Code
 
-### 1. Clone the Repository
+### Step 1: Clone the Repository
 
 ```bash
 git clone https://github.com/pratikabhang/SHOP.git
 ```
 
-### 2. Navigate to the Project Directory
+### Step 2: Navigate to the Project
 
 ```bash
 cd SHOP
 ```
 
-### 3. Run the Website Locally
+### Step 3: Run Locally
 
-The project includes an HTML entry point. You can open `index.html` directly in your browser or start a local HTTP server.
-
-Using Python:
+Open `index.html` in your browser, or use Python to start a local server:
 
 ```bash
 python -m http.server 8000
 ```
 
-Open the following address in your browser:
+Visit:
 
 ```text
 http://localhost:8000
 ```
 
-No package installation is required for the basic static website as documented by the repository's visible structure.
+Press `Ctrl + C` in the terminal to stop the server.
 
-**Note:** Font Awesome is loaded from an external CDN, so its icons require an internet connection.
+No package installation is needed for basic static hosting of the HTML page. Externally hosted icons or fonts may require an internet connection.
 
-## 🌐 Live Deployment
+## 🌍 Live Deployment
 
-The website is hosted on Netlify.
+The website is published on Netlify.
 
-- **Live website:** [https://dnyaneshwarraswanti.netlify.app/](https://dnyaneshwarraswanti.netlify.app/)
-- **Source code:** [https://github.com/pratikabhang/SHOP](https://github.com/pratikabhang/SHOP)
+- **Live Website:** [https://dnyaneshwarraswanti.netlify.app/](https://dnyaneshwarraswanti.netlify.app/)
+- **Source Repository:** [https://github.com/pratikabhang/SHOP](https://github.com/pratikabhang/SHOP)
 
 ## 🔮 Future Enhancements
 
-Potential improvements that could be introduced in future versions include:
+The following are proposed improvements rather than existing features:
 
-- **Digital menu management:** Make it easier to update prices and menu items.
-- **WhatsApp enquiries:** Allow customers to contact the shop directly.
-- **Online ordering:** Introduce an ordering workflow if the business chooses to support it.
-- **Seasonal menu:** Highlight seasonal beverages and special offers.
-- **Google Maps integration:** Add clearer directions and branch-specific location details.
-- **Accessibility:** Improve keyboard navigation, image descriptions, and color contrast.
-- **Search engine optimization:** Add structured business information and metadata.
-- **Performance improvements:** Optimize images and reduce external asset dependencies.
-- **Multilingual support:** Further improve navigation and content for Marathi- and English-speaking customers.
+- **Online ordering:** Introduce ordering functionality if supported by the business.
+- **WhatsApp integration:** Simplify customer enquiries.
+- **Menu management:** Make product prices and availability easier to update.
+- **Branch-specific information:** Add verified street addresses and individual contact details.
+- **Google Maps integration:** Improve location details for every branch.
+- **Accessibility:** Improve keyboard navigation, contrast, and image descriptions.
+- **SEO improvements:** Add relevant metadata and local business structured data.
+- **Performance optimization:** Compress images and optimize external resources.
+- **Customer feedback:** Add verified testimonials and ratings.
+- **Multilingual enhancements:** Improve the Marathi and English experience throughout the website.
 
-These are proposed enhancements, not claims about existing functionality.
-
-## 👨‍💻 Project Information
+## 📋 Project Information
 
 | Field | Details |
 |---|---|
-| Project Name | Dnyaneshwar Raswanti & Cold Drinks Website |
-| Repository | [pratikabhang/SHOP](https://github.com/pratikabhang/SHOP) |
-| Deployment | [Netlify Live Website](https://dnyaneshwarraswanti.netlify.app/) |
-| Business Location | Shrirampur, Ahilyanagar, Maharashtra, India |
-| Project Type | Business website / digital menu |
+| Project Name | Dnyaneshwar Raswanti & Cold Drinks |
+| Project Type | Bilingual business website |
+| Established | 1981 |
+| Repository | [GitHub — SHOP](https://github.com/pratikabhang/SHOP) |
+| Live Website | [Netlify Deployment](https://dnyaneshwarraswanti.netlify.app/) |
+| Location | Shrirampur, Ahilyanagar, Maharashtra, India |
+| Primary Technologies | HTML5 and CSS3 |
 
 ## 📄 License
 
-No specific open-source license was confirmed from the repository overview. Check the repository's licensing terms before reusing, modifying, or redistributing the source code.
+Please check the repository for an applicable license before reusing or redistributing the source code. No specific open-source license is asserted here.
 
 ---
 
 <p align="center">
-  <strong>Dnyaneshwar Raswanti & Cold Drinks</strong><br/>
-  <em>Refreshing Taste Since 1991</em><br/>
-  Made with care for the local community. 🥤
+  <strong>DNYANESHWAR RASWANTI & COLD DRINKS</strong><br/>
+  ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स<br/>
+  <em>Refreshing Taste Since 1981</em><br/>
+  चव इतकी भारी, भावना सुंदर सारी! 🥤
 </p>
