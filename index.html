@@ -63,7 +63,6 @@
                 radial-gradient(circle at bottom left, #E0F7FA, transparent 40%);
         }
 
-        /* Floating Circles */
         .geo-circle {
             position: absolute;
             border-radius: 50%;
@@ -97,7 +96,6 @@
             animation-delay: 2s;
         }
 
-        /* Floating Triangles */
         .geo-triangle {
             position: absolute;
             width: 0;
@@ -121,7 +119,6 @@
             animation-delay: 8s;
         }
 
-        /* Floating Squares */
         .geo-square {
             position: absolute;
             width: 100px;
@@ -162,7 +159,7 @@
         }
 
         .container {
-            max-width: 1150px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
             position: relative;
@@ -170,7 +167,7 @@
             width: 100%;
         }
 
-        /* ---------- HEADER (MOBILE OPTIMIZED) ---------- */
+        /* ---------- HEADER (WITH SOCIALS) ---------- */
         header {
             background: rgba(255, 255, 255, 0.85);
             backdrop-filter: blur(15px);
@@ -248,20 +245,56 @@
             letter-spacing: 0.5px;
         }
 
-        /* Tagline hidden on mobile, shown on desktop */
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
         .tagline {
             text-align: right;
             font-size: 0.9rem;
             font-style: italic;
             font-weight: 600;
             color: var(--primary-blue);
-            max-width: 320px;
+            max-width: 280px;
             transition: var(--transition);
         }
 
         .tagline:hover {
             transform: scale(1.02);
             color: var(--accent-cyan);
+        }
+
+        .nav-socials {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: var(--transition);
+            text-decoration: none;
+        }
+
+        .nav-socials a.insta {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+
+        .nav-socials a.wa {
+            background: #25D366;
+        }
+
+        .nav-socials a:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
         /* ---------- HERO ---------- */
@@ -536,7 +569,7 @@
             }
         }
 
-        /* ---------- MODERN MENU CARDS ---------- */
+        /* ---------- MODERN MENU CARDS (4x4 Grid) ---------- */
         .menu-section {
             padding: 100px 0;
             background: var(--fresh-bg);
@@ -545,14 +578,15 @@
 
         .menu-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            /* Forces 4 columns on desktop, adjusts for smaller screens */
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
         }
 
         .menu-card {
             background: var(--white);
             border-radius: 20px;
-            padding: 25px;
+            padding: 20px;
             box-shadow: var(--shadow-soft);
             transition: var(--transition);
             position: relative;
@@ -576,7 +610,7 @@
         }
 
         .menu-card:hover {
-            transform: translateY(-8px) scale(1.01);
+            transform: translateY(-8px) scale(1.02);
             box-shadow: var(--shadow-strong);
             border-top-color: var(--accent-yellow);
         }
@@ -593,26 +627,27 @@
             position: relative;
             z-index: 1;
             gap: 10px;
+            flex-direction: column;
         }
 
         .menu-item-name {
-            font-size: 1.1rem;
+            font-size: 1.05rem;
             font-weight: 800;
             color: var(--primary-blue-dark);
             line-height: 1.3;
-            flex: 1;
         }
 
         .menu-item-price {
             background: var(--accent-yellow);
             color: var(--primary-blue-dark);
-            padding: 5px 14px;
+            padding: 4px 12px;
             border-radius: 30px;
             font-weight: 800;
-            font-size: 1rem;
+            font-size: 0.95rem;
             box-shadow: 0 4px 10px rgba(255, 214, 10, 0.4);
             white-space: nowrap;
             transition: var(--transition);
+            align-self: flex-start;
         }
 
         .menu-card:hover .menu-item-price {
@@ -622,7 +657,7 @@
         }
 
         .menu-item-marathi {
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             font-weight: 700;
             color: var(--accent-green);
             margin-bottom: 10px;
@@ -633,12 +668,8 @@
             z-index: 1;
         }
 
-        .menu-item-marathi i {
-            font-size: 0.9rem;
-        }
-
         .menu-item-desc {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: var(--text-light);
             font-weight: 500;
             border-left: 3px solid var(--accent-cyan);
@@ -686,6 +717,68 @@
         .menu-note-box i {
             color: var(--accent-yellow);
             font-size: 1.1rem;
+        }
+
+        /* ---------- BENEFITS SECTION ---------- */
+        .benefits-section {
+            padding: 100px 0;
+            background: var(--white);
+            position: relative;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+        }
+
+        .benefit-card {
+            background: var(--fresh-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: var(--shadow-soft);
+            transition: var(--transition);
+            border-left: 5px solid var(--accent-green);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-strong);
+            border-left-color: var(--accent-yellow);
+        }
+
+        .benefit-card i {
+            font-size: 2rem;
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .benefit-card:hover i {
+            color: var(--accent-green);
+            transform: scale(1.1);
+        }
+
+        .benefit-card h4 {
+            font-size: 1.1rem;
+            color: var(--primary-blue-dark);
+            margin-bottom: 8px;
+            font-weight: 800;
+        }
+
+        .benefit-card p {
+            font-size: 0.9rem;
+            color: var(--text-dark);
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .benefit-card p.marathi {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.85rem;
         }
 
         /* ---------- HYGIENE ---------- */
@@ -965,31 +1058,40 @@
             font-size: 1rem;
         }
 
+        /* Proper Social Media Icons */
         .social-links {
             display: flex;
-            gap: 12px;
-            margin-top: 20px;
+            gap: 15px;
+            margin-top: 25px;
         }
 
         .social-links a {
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
+            width: 45px;
+            height: 45px;
             background: rgba(255, 255, 255, 0.05);
             border-radius: 50%;
             color: var(--white);
             transition: var(--transition);
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
         }
 
-        .social-links a:hover {
-            background: var(--accent-cyan);
-            color: var(--primary-blue-dark);
-            transform: translateY(-4px) scale(1.05);
-            border-color: var(--accent-cyan);
+        .social-links a.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: var(--white);
+            transform: translateY(-5px) scale(1.1);
+            border-color: transparent;
+        }
+
+        .social-links a.whatsapp:hover {
+            background: #25D366;
+            color: var(--white);
+            transform: translateY(-5px) scale(1.1);
+            border-color: transparent;
         }
 
         .copyright {
@@ -1058,6 +1160,12 @@
         }
 
         /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 1100px) {
+            .menu-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
             .hero h2 {
                 font-size: 2.4rem;
@@ -1070,20 +1178,15 @@
             .about-logo-frame {
                 max-width: 300px;
             }
-        }
 
-        @media (max-width: 768px) {
-
-            /* Hide tagline in header on mobile */
             .tagline {
                 display: none;
             }
 
-            /* Show tagline in footer on mobile */
-            .mobile-footer-tagline {
-                display: block;
-            }
+            /* Hide tagline to fit nav socials */
+        }
 
+        @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
@@ -1093,6 +1196,17 @@
             .logo-section {
                 justify-content: center;
                 width: 100%;
+            }
+
+            .header-right {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .mobile-footer-tagline {
+                display: block;
             }
 
             .hero h2 {
@@ -1108,11 +1222,11 @@
             }
 
             .menu-grid {
-                grid-template-columns: 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
 
             .menu-card {
-                padding: 20px;
+                padding: 15px;
             }
 
             .hygiene-icons {
@@ -1167,10 +1281,14 @@
                 font-size: 0.9rem;
             }
 
+            .menu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            /* Single column on small phones */
             .menu-card-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 8px;
+                flex-direction: row;
+                align-items: center;
             }
 
             .menu-item-price {
@@ -1242,9 +1360,21 @@
                         <p>DNYANESHWAR RASWANTI & COLD DRINKS</p>
                     </div>
                 </div>
-                <!-- This tagline is hidden on mobile via CSS -->
-                <div class="tagline">
-                    <p>"चव इतकी भारी, भावना सुंदर सारी!"<br>"Taste So Fine, Feel Divine!"</p>
+
+                <div class="header-right">
+                    <div class="tagline">
+                        <p>"चव इतकी भारी, भावना सुंदर सारी!"<br>"Taste So Fine, Feel Divine!"</p>
+                    </div>
+                    <!-- Social Media in Navbar -->
+                    <div class="nav-socials">
+                        <a href="https://www.instagram.com/DNYANESHWARCOLDDRINKS" target="_blank" class="insta"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919860745626" target="_blank" class="wa" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1254,7 +1384,7 @@
     <section class="hero">
         <div class="container hero-content">
             <h2>महाराष्ट्र शासन कृषी अनुदानित</h2>
-            <p>Since 1981, serving the finest and freshest beverages in Shrirampur. Experience the taste of tradition
+            <p>Since 1979, serving the finest and freshest beverages in Shrirampur. Experience the taste of tradition
                 with a modern touch.</p>
             <a href="#menu" class="btn">View Our Menu</a>
         </div>
@@ -1268,12 +1398,12 @@
             </div>
             <div class="about-content">
                 <div class="about-text reveal-left">
-                    <h3>Over Four Decades of Refreshing Taste Since 1981 | १९८१ पासून ताजेतवाने चव</h3>
-                    <p>Established in <strong>1981</strong>, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has
+                    <h3>Over Four Decades of Refreshing Taste Since 1979 | १९७९ पासून ताजेतवाने चव</h3>
+                    <p>Established in <strong>1979</strong>, <strong>Dnyaneshwar Raswanti & Cold Drinks</strong> has
                         been a trusted destination in Shrirampur for fresh and refreshing beverages. With more than four
                         decades of experience, we have proudly served thousands of happy customers by maintaining
                         consistent quality, hygiene, and great taste.</p>
-                    <p><strong>१९८१</strong> मध्ये स्थापित, <strong>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</strong> हे
+                    <p><strong>१९७९</strong> मध्ये स्थापित, <strong>ज्ञानेश्वर रसवंती अँड कोल्ड ड्रिंक्स</strong> हे
                         श्रीरामपूरमधील ताज्या आणि ताजेतवाने पेयांसाठी विश्वासार्ह ठिकाण आहे. चार दशकांहून अधिक अनुभवासह,
                         आम्ही सातत्यपूर्ण गुणवत्ता, स्वच्छता आणि उत्तम चव राखून हजारो आनंदी ग्राहकांना सेवा दिली आहे.
                     </p>
@@ -1291,7 +1421,7 @@
                         <div class="about-logo-inner">
                             <img src="logo.png" alt="Dnyaneshwar Raswanti Logo">
                         </div>
-                        <div class="since-text">Since 1981 | १९८१ पासून</div>
+                        <div class="since-text">Since 1979 | १९७९ पासून</div>
                     </div>
                 </div>
             </div>
@@ -1352,18 +1482,8 @@
                     <div class="menu-item-desc">No lemon, just the pure sweetness of sugarcane</div>
                 </div>
 
-                <!-- 5. Extra Large Glass -->
+                <!-- 5. Pineapple Sugarcane Juice -->
                 <div class="menu-card reveal delay-2">
-                    <div class="menu-card-header">
-                        <span class="menu-item-name">Extra Large Glass<br>मोठा ग्लास</span>
-                        <span class="menu-item-price">₹25</span>
-                    </div>
-                    <div class="menu-item-marathi"><i class="fas fa-glass-whiskey"></i> मोठा ग्लास</div>
-                    <div class="menu-item-desc">Extra large serving for big thirsts</div>
-                </div>
-
-                <!-- 6. Pineapple Sugarcane Juice -->
-                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Pineapple Sugarcane Juice<br>पायनॅपल ऊसाचा रस</span>
                         <span class="menu-item-price">₹40</span>
@@ -1372,8 +1492,8 @@
                     <div class="menu-item-desc">Blended with fresh pineapple</div>
                 </div>
 
-                <!-- 7. Mix Fruit Glass -->
-                <div class="menu-card reveal delay-1">
+                <!-- 6. Mix Fruit Glass -->
+                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Mix Fruit Glass<br>मिक्स फ्रूट ग्लास</span>
                         <span class="menu-item-price">₹40</span>
@@ -1382,8 +1502,8 @@
                     <div class="menu-item-desc">Mixed seasonal fruits in a glass</div>
                 </div>
 
-                <!-- 8. Mix Fruit Juice -->
-                <div class="menu-card reveal delay-2">
+                <!-- 7. Mix Fruit Juice -->
+                <div class="menu-card reveal delay-1">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Mix Fruit Juice<br>मिक्स फ्रूट ज्यूस</span>
                         <span class="menu-item-price">₹70</span>
@@ -1392,8 +1512,8 @@
                     <div class="menu-item-desc">Premium mixed fruit juice</div>
                 </div>
 
-                <!-- 9. Pineapple Juice -->
-                <div class="menu-card reveal delay-3">
+                <!-- 8. Pineapple Juice -->
+                <div class="menu-card reveal delay-2">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Pineapple Juice<br>पायनॅपल ज्यूस</span>
                         <span class="menu-item-price">₹50</span>
@@ -1402,8 +1522,8 @@
                     <div class="menu-item-desc">Pure pineapple crush</div>
                 </div>
 
-                <!-- 10. Fruit Juice -->
-                <div class="menu-card reveal delay-1">
+                <!-- 9. Fruit Juice -->
+                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Fruit Juice<br>फ्रूट ज्यूस</span>
                         <span class="menu-item-price">₹60</span>
@@ -1412,8 +1532,8 @@
                     <div class="menu-item-desc">Fresh fruit juice</div>
                 </div>
 
-                <!-- 11. Lassi (Full) -->
-                <div class="menu-card reveal delay-2">
+                <!-- 10. Lassi (Full) -->
+                <div class="menu-card reveal delay-1">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Lassi (Full)<br>लस्सी (फुल)</span>
                         <span class="menu-item-price">₹50</span>
@@ -1422,8 +1542,8 @@
                     <div class="menu-item-desc">Thick creamy yogurt lassi</div>
                 </div>
 
-                <!-- 12. Lassi (Half) -->
-                <div class="menu-card reveal delay-3">
+                <!-- 11. Lassi (Half) -->
+                <div class="menu-card reveal delay-2">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Lassi (Half)<br>लस्सी (हाफ)</span>
                         <span class="menu-item-price">₹30</span>
@@ -1432,8 +1552,8 @@
                     <div class="menu-item-desc">Refreshing yogurt drink</div>
                 </div>
 
-                <!-- 13. Cold Buttermilk -->
-                <div class="menu-card reveal delay-1">
+                <!-- 12. Cold Buttermilk -->
+                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Cold Buttermilk<br>थंडगार ताक</span>
                         <span class="menu-item-price">₹20</span>
@@ -1442,8 +1562,8 @@
                     <div class="menu-item-desc">Refreshing buttermilk</div>
                 </div>
 
-                <!-- 14. Lemon Sharbat -->
-                <div class="menu-card reveal delay-2">
+                <!-- 13. Lemon Sharbat -->
+                <div class="menu-card reveal delay-1">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Lemon Sharbat<br>लिंबू शरबत</span>
                         <span class="menu-item-price">₹30</span>
@@ -1452,8 +1572,8 @@
                     <div class="menu-item-desc">Fresh lemon sweet drink</div>
                 </div>
 
-                <!-- 15. Coconut Water -->
-                <div class="menu-card reveal delay-3">
+                <!-- 14. Coconut Water -->
+                <div class="menu-card reveal delay-2">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Coconut Water<br>नारळ पाणी</span>
                         <span class="menu-item-price">₹50</span>
@@ -1462,8 +1582,8 @@
                     <div class="menu-item-desc">Tender coconut, chilled</div>
                 </div>
 
-                <!-- 16. Water Bottle -->
-                <div class="menu-card reveal delay-1">
+                <!-- 15. Water Bottle -->
+                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Water Bottle<br>पाणी बॉटल</span>
                         <span class="menu-item-price">₹20</span>
@@ -1472,8 +1592,8 @@
                     <div class="menu-item-desc">1 litre packaged drinking water</div>
                 </div>
 
-                <!-- 17. Jaggery Tea -->
-                <div class="menu-card reveal delay-2">
+                <!-- 16. Jaggery Tea -->
+                <div class="menu-card reveal delay-1">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Jaggery Tea<br>गुळाचा चहा</span>
                         <span class="menu-item-price">₹10</span>
@@ -1482,8 +1602,8 @@
                     <div class="menu-item-desc">Traditional jaggery tea</div>
                 </div>
 
-                <!-- 18. Sugar Tea -->
-                <div class="menu-card reveal delay-3">
+                <!-- 17. Sugar Tea -->
+                <div class="menu-card reveal delay-2">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Sugar Tea<br>साखरेचा चहा</span>
                         <span class="menu-item-price">₹10</span>
@@ -1492,8 +1612,8 @@
                     <div class="menu-item-desc">Regular milk tea</div>
                 </div>
 
-                <!-- 19. Coffee -->
-                <div class="menu-card reveal delay-1">
+                <!-- 18. Coffee -->
+                <div class="menu-card reveal delay-3">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Coffee<br>कॉफी</span>
                         <span class="menu-item-price">₹30</span>
@@ -1502,8 +1622,8 @@
                     <div class="menu-item-desc">Fresh hot coffee</div>
                 </div>
 
-                <!-- 20. Pohe -->
-                <div class="menu-card reveal delay-2">
+                <!-- 19. Pohe -->
+                <div class="menu-card reveal delay-1">
                     <div class="menu-card-header">
                         <span class="menu-item-name">Pohe<br>पोहे</span>
                         <span class="menu-item-price">₹25</span>
@@ -1511,15 +1631,104 @@
                     <div class="menu-item-marathi"><i class="fas fa-utensils"></i> गरमागरम नाश्ता</div>
                     <div class="menu-item-desc">Freshly prepared Maharashtrian snack</div>
                 </div>
+            </div>
+        </div>
+    </section>
 
-                <!-- 21. Snacks -->
-                <div class="menu-card reveal delay-3">
-                    <div class="menu-card-header">
-                        <span class="menu-item-name">Snacks<br>स्नॅक्स</span>
-                        <span class="menu-item-price">₹40</span>
-                    </div>
-                    <div class="menu-item-marathi"><i class="fas fa-utensils"></i> चटकदार नाश्ता</div>
-                    <div class="menu-item-desc">Assorted tasty snacks</div>
+    <!-- Enhanced Health Benefits Section -->
+    <section class="benefits-section">
+        <div class="container">
+            <div class="section-title reveal">
+                <h2>Health Benefits | आरोग्याचे फायदे</h2>
+            </div>
+            <div class="benefits-grid">
+                <!-- Benefit 1 -->
+                <div class="benefit-card reveal delay-1">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Instant Energy<br>तात्काळ ऊर्जा</h4>
+                    <p>Sugarcane juice is packed with natural sugars that provide a quick energy boost.</p>
+                    <p class="marathi">ऊसाच्या रसामध्ये नैसर्गिक साखर भरपूर प्रमाणात असते जी त्वरित ऊर्जा देते.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="benefit-card reveal delay-2">
+                    <i class="fas fa-heartbeat"></i>
+                    <h4>Improves Digestion<br>पचन सुधारते</h4>
+                    <p>Fruit juices and sugarcane juice help in keeping your digestive system healthy.</p>
+                    <p class="marathi">फळांचे रस आणि ऊसाचा रस तुमची पचनसंस्था निरोगी ठेवण्यास मदत करतात.</p>
+                </div>
+                <!-- Benefit 3 -->
+                <div class="benefit-card reveal delay-3">
+                    <i class="fas fa-tint"></i>
+                    <h4>Hydration & Detox<br>हायड्रेशन आणि डिटॉक्स</h4>
+                    <p>Fresh juices keep you hydrated and help flush out toxins from the body.</p>
+                    <p class="marathi">ताजे रस तुम्हाला हायड्रेटेड ठेवतात आणि शरीरातील विषारी घटक बाहेर टाकण्यास मदत
+                        करतात.</p>
+                </div>
+                <!-- Benefit 4 -->
+                <div class="benefit-card reveal delay-1">
+                    <i class="fas fa-shield-alt"></i>
+                    <h4>Boosts Immunity<br>रोगप्रतिकारक शक्ती वाढवते</h4>
+                    <p>Rich in Vitamin C, fruit juices strengthen your immune system.</p>
+                    <p class="marathi">व्हिटॅमिन सी समृद्ध फळांचे रस तुमची रोगप्रतिकारक शक्ती वाढवतात.</p>
+                </div>
+                <!-- Benefit 5 -->
+                <div class="benefit-card reveal delay-2">
+                    <i class="fas fa-liver"></i>
+                    <h4>Liver Health<br>यकृताचे आरोग्य</h4>
+                    <p>Sugarcane juice is known to be beneficial for liver health and jaundice.</p>
+                    <p class="marathi">ऊसाचा रस यकृताच्या आरोग्यासाठी आणि कावीळीसाठी फायदेशीर मानला जातो.</p>
+                </div>
+                <!-- Benefit 6 -->
+                <div class="benefit-card reveal delay-3">
+                    <i class="fas fa-leaf"></i>
+                    <h4>Good for Skin<br>त्वचेसाठी चांगले</h4>
+                    <p>Antioxidants in fruit juices and tea help maintain glowing and healthy skin.</p>
+                    <p class="marathi">फळांचे रस आणि चहामधील अँटीऑक्सिडंट्स त्वचा तजेलदार आणि निरोगी ठेवण्यास मदत करतात.
+                    </p>
+                </div>
+                <!-- Benefit 7 -->
+                <div class="benefit-card reveal delay-1">
+                    <i class="fas fa-fire-alt"></i>
+                    <h4>Aids Weight Loss<br>वजन कमी करण्यास मदत</h4>
+                    <p>Low-calorie juices like lemon water and buttermilk aid in weight management.</p>
+                    <p class="marathi">लिंबू पाणी आणि ताक सारखे कमी कॅलरीचे पेय वजन नियंत्रित करण्यास मदत करतात.</p>
+                </div>
+                <!-- Benefit 8 -->
+                <div class="benefit-card reveal delay-2">
+                    <i class="fas fa-brain"></i>
+                    <h4>Mental Alertness<br>मानसिक तंदुरुस्ती</h4>
+                    <p>Tea contains caffeine and L-theanine, which help improve focus and alertness.</p>
+                    <p class="marathi">चहामध्ये कॅफीन आणि एल-थेनिन असते, जे लक्ष केंद्रित करण्यास आणि सतर्क राहण्यास मदत
+                        करते.</p>
+                </div>
+                <!-- Benefit 9 -->
+                <div class="benefit-card reveal delay-3">
+                    <i class="fas fa-bone"></i>
+                    <h4>Bone Strength<br>हाडांची मजबुती</h4>
+                    <p>Lassi and buttermilk are rich in calcium, essential for strong bones and teeth.</p>
+                    <p class="marathi">लस्सी आणि ताक कॅल्शियमने समृद्ध आहेत, जे मजबूत हाडे आणि दातांसाठी आवश्यक आहे.</p>
+                </div>
+                <!-- Benefit 10 -->
+                <div class="benefit-card reveal delay-1">
+                    <i class="fas fa-temperature-low"></i>
+                    <h4>Natural Cooling<br>नैसर्गिक थंडावा</h4>
+                    <p>Drinks like coconut water and sugarcane juice provide a natural cooling effect to the body.</p>
+                    <p class="marathi">नारळ पाणी आणि ऊसाचा रस सारखे पेय शरीराला नैसर्गिक थंडावा देतात.</p>
+                </div>
+                <!-- Benefit 11 (New) -->
+                <div class="benefit-card reveal delay-2">
+                    <i class="fas fa-heart"></i>
+                    <h4>Heart Health<br>हृदयाचे आरोग्य</h4>
+                    <p>Potassium in coconut water and antioxidants in juices support cardiovascular health.</p>
+                    <p class="marathi">नारळ पाण्यातील पोटॅशियम आणि रसांमधील अँटीऑक्सिडंट्स हृदयाच्या आरोग्यासाठी
+                        फायदेशीर आहेत.</p>
+                </div>
+                <!-- Benefit 12 (New) -->
+                <div class="benefit-card reveal delay-3">
+                    <i class="fas fa-eye"></i>
+                    <h4>Improves Vision<br>दृष्टी सुधारते</h4>
+                    <p>Vitamin A in fruit juices and milk-based drinks supports healthy eyesight.</p>
+                    <p class="marathi">फळांचे रस आणि दुधावर आधारित पेयांमधील व्हिटॅमिन ए निरोगी दृष्टीसाठी मदत करते.</p>
                 </div>
             </div>
         </div>
@@ -1567,6 +1776,14 @@
                 <div class="hygiene-icon reveal delay-2">
                     <i class="fas fa-check-double"></i>
                     <p>Quality Checked<br>गुणवत्ता तपासणी</p>
+                </div>
+                <div class="hygiene-icon reveal delay-3">
+                    <i class="fas fa-tshirt"></i>
+                    <p>Clean Uniforms<br>स्वच्छ गणवेश</p>
+                </div>
+                <div class="hygiene-icon reveal delay-1">
+                    <i class="fas fa-box-open"></i>
+                    <p>Sealed Packaging<br>सीलबंद पॅकेजिंग</p>
                 </div>
             </div>
         </div>
@@ -1677,13 +1894,20 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Dnyaneshwar Raswanti</h3>
-                    <p>Refreshment Redefined Since 1981. Serving Shrirampur with quality beverages for over four
+                    <p>Refreshment Redefined Since 1979. Serving Shrirampur with quality beverages for over four
                         decades.</p>
-                    <p>१९८१ पासून ताजेपणाची नवी व्याख्या. श्रीरामपूरला चार दशकांहून अधिक काळ दर्जेदार पेये पुरवत आहोत.
+                    <p>१९७९ पासून ताजेपणाची नवी व्याख्या. श्रीरामपूरला चार दशकांहून अधिक काळ दर्जेदार पेये पुरवत आहोत.
                     </p>
+
+                    <!-- Proper Social Media Links -->
                     <div class="social-links">
-                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/DNYANESHWARCOLDDRINKS" target="_blank" class="instagram"
+                            aria-label="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/919860745626" target="_blank" class="whatsapp" aria-label="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
 
